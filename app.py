@@ -75,91 +75,111 @@ Tiene como objetivos prevenir/reducir embarazos adolescentes, violencia sexual, 
 Además, no solo está dirigida a estudiantes, sino también a docentes y familiares, mediante acciones formativas, preventivas y de fortalecimiento de capacidades.
         """)
 
-    elif opcion == "2. Métodos anticonceptivos":
-        st.header("📌 Métodos Anticonceptivos")
-        st.markdown("A continuación, verás los métodos anticonceptivos más comunes. Haz clic en cada uno para ver su información completa.")
+elif opcion == "2. Métodos anticonceptivos":
+    st.header("📌 Métodos Anticonceptivos")
+    st.markdown("Haz clic para conocer más sobre cada método:")
 
-        col1, col2 = st.columns(2)
+    metodos = {
+        "🧴 Condón": {
+            "img": "https://www.salud.mapfre.es/media/2021/04/condon.jpg",
+            "desc": """
+**Condón**  
+- Doble protección: embarazo e ITS.  
+- Uso externo.  
+- Masculino 85%, femenino 79% (uso común)."""
+        },
+        "💊 Pastillas anticonceptivas": {
+            "img": "https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg",
+            "desc": """
+**Pastillas anticonceptivas**  
+- Diarias.  
+- 99.7% eficacia (uso correcto).  
+- Regulan el ciclo y reducen algunos riesgos de cáncer."""
+        },
+        "💉 Inyecciones": {
+            "img": "https://cdn.pixabay.com/photo/2020/05/19/19/39/syringe-5193891_1280.jpg",
+            "desc": """
+**Inyecciones**  
+- Mensuales o trimestrales.  
+- 99.5% – 99.7% de eficacia.  
+- Aplicación en centro de salud."""
+        },
+        "📍 Implante subdérmico": {
+            "img": "https://www.nexplanonusa.com/assets/images/nx_diagram_2.png",
+            "desc": """
+**Implante subdérmico**  
+- Varilla en el brazo.  
+- Hasta 3 años.  
+- 99.95% eficacia."""
+        },
+        "⚙️ SIU Hormonal": {
+            "img": "https://www.healthychildren.org/SiteCollectionImagesArticleImages/IUD.jpg",
+            "desc": """
+**SIU Hormonal**  
+- Dentro del útero.  
+- Libera hormonas por 5 años.  
+- 99.5% eficaz."""
+        },
+        "🧲 DIU de cobre": {
+            "img": "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/55/40/554029cd-066e-4d9e-873d-bc35283f9628/iud_illustration.jpg__800x600_q85_crop_subsampling-2.jpg",
+            "desc": """
+**DIU de cobre**  
+- Sin hormonas.  
+- Protege hasta 12 años.  
+- 99.4% eficaz."""
+        },
+        "🚨 AOE": {
+            "img": "https://cdn.pixabay.com/photo/2017/08/06/12/39/contraceptive-2595580_1280.jpg",
+            "desc": """
+**AOE (pastilla de emergencia)**  
+- Solo para emergencias.  
+- Hasta 72h después.  
+- 95% eficaz si se toma pronto."""
+        }
+    }
 
-        with col1:
-            if st.button("🧴 Condón"):
-                st.image("https://www.salud.mapfre.es/media/2021/04/condon.jpg", width=300)
-                st.write("""
-✅ **Condón**  
-- Brinda doble protección: contra embarazos no planificados y contra ITS, incluyendo VIH.  
-- Debe colocarse antes del acto sexual.  
-- Eficacia: masculino 85%, femenino 79% en uso común.
-""")
+    for metodo, info in metodos.items():
+        with st.expander(metodo):
+            st.image(info["img"], use_column_width=True)
+            st.markdown(info["desc"])
 
-            if st.button("💊 Pastillas anticonceptivas"):
-                st.image("https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg", width=300)
-                st.write("""
-✅ **Pastillas anticonceptivas**  
-- Método hormonal diario que inhibe la ovulación y espesa el moco cervical.  
-- Eficacia del 99.7% si se usa correctamente.  
-- También protege contra algunos tipos de cáncer.
-""")
 
-            if st.button("💉 Inyecciones"):
-                st.image("https://www.gob.pe/institucion/minsa/noticias/489497-uso-de-inyectables-anticonceptivos-es-una-alternativa-segura-para-prevenir-embarazos-no-deseados", width=300)
-                st.write("""
-✅ **Inyecciones**  
-- Detienen la ovulación. Existen versiones mensuales y trimestrales.  
-- Eficacia mensual 99.5%, trimestral 99.7%.  
-- Se aplican en centros de salud.
-""")
+elif opcion == "3. Mitos y verdades":
+    st.header("🎮 ¿Mito o Verdad?")
+    st.write("Responde cada afirmación. Luego de responder, verás la explicación.")
 
-        with col2:
-            if st.button("📍 Implante subdérmico"):
-                st.image("https://www.nexplanonusa.com/assets/images/nx_diagram_2.png", width=300)
-                st.write("""
-✅ **Implante subdérmico**  
-- Pequeña varilla bajo la piel del brazo. Libera hormonas y protege hasta 3 años.  
-- Eficacia del 99.95%.  
-- Puede afectar el ciclo menstrual.
-""")
+    preguntas = [
+        {
+            "preg": "La educación sexual en la escuela interfiere con lo que enseñan en casa.",
+            "rpta": "mito",
+            "exp": "La ESI complementa lo aprendido en familia.",
+            "img": "https://cdn-icons-png.flaticon.com/512/3839/3839959.png"
+        },
+        {
+            "preg": "Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales.",
+            "rpta": "mito",
+            "exp": "Está demostrado que la ESI retrasa el inicio sexual.",
+            "img": "https://cdn-icons-png.flaticon.com/512/2124/2124516.png"
+        },
+        {
+            "preg": "La ESI enseña sobre identidad de género sin imponer orientación.",
+            "rpta": "verdad",
+            "exp": "La ESI enseña a no discriminar y valorar la diversidad.",
+            "img": "https://cdn-icons-png.flaticon.com/512/3613/3613273.png"
+        }
+    ]
 
-            if st.button("⚙️ SIU - Sistema intrauterino hormonal"):
-                st.image("https://www.healthychildren.org/SiteCollectionImagesArticleImages/IUD.jpg", width=300)
-                st.write("""
-✅ **SIU - Sistema intrauterino hormonal**  
-- Dispositivo que se coloca en el útero y libera hormonas. Protege hasta 5 años.  
-- Eficacia del 99.5%.  
-- Colocación y retiro por profesional de salud.
-""")
-
-            if st.button("🧲 DIU - Dispositivo intrauterino de cobre"):
-                st.image("https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/55/40/554029cd-066e-4d9e-873d-bc35283f9628/iud_illustration.jpg__800x600_q85_crop_subsampling-2.jpg", width=300)
-                st.write("""
-✅ **DIU - Dispositivo intrauterino de cobre**  
-- Pequeño dispositivo sin hormonas que previene la fecundación. Dura hasta 12 años.  
-- Eficacia del 99.4%.  
-- No interfiere con el acto sexual.
-""")
-
-            if st.button("🚨 AOE - Anticoncepción Oral de Emergencia"):
-                st.image("https://cdn.pixabay.com/photo/2017/08/06/12/39/contraceptive-2595580_1280.jpg", width=300)
-                st.write("""
-✅ **Anticoncepción oral de emergencia (AOE)**  
-- Uso solo en emergencias.  
-- Hasta 72 horas después del acto sexual sin protección.  
-- Eficacia de hasta 95%, cuanto antes se use, mejor.  
-- No es un método regular.
-""")
-
-    elif opcion == "3. Mitos y verdades":
-        st.header("🎮 Juguemos: ¿Mito o Verdad?")
-        preguntas = [
-            ("La educación sexual en la escuela interfiere con la educación que los padres y madres brindan en el hogar", "mito", "La ESI complementa la educación familiar."),
-            ("Hablar de sexo incita a los adolescentes a tener relaciones.", "mito", "La ESI retrasa el inicio sexual y mejora la toma de decisiones."),
-            ("Hay adultos quienes no tuvieron enseñanza sobre la sexualidad y les fue bien", "mito", "La falta de información integral genera dudas e inseguridad."),
-            ("La ESI habla sobre identidad de género sin imponer la sexualidad", "verdad", "Verdad: enseña a no discriminar y valorar la diversidad.")
-        ]
-        for i, (preg, rpta, expl) in enumerate(preguntas, 1):
-            user = st.radio(f"{i}. {preg}", ["mito", "verdad"], key=f"m{i}")
-            if user:
-                st.success("✔️ ¡Correcto!") if user == rpta else st.error("❌ Incorrecto")
-                st.info(expl)
+    for i, item in enumerate(preguntas, 1):
+        st.markdown(f"**{i}. {item['preg']}**")
+        st.image(item["img"], width=100)
+        respuesta = st.radio("Elige una opción:", ["mito", "verdad"], key=f"mito{i}")
+        if respuesta:
+            if respuesta == item["rpta"]:
+                st.success("✔️ ¡Correcto!")
+            else:
+                st.error("❌ Incorrecto")
+            st.info(item["exp"])
+            st.markdown("---")
 
     elif opcion == "4. Autocuidado digital y sexting":
         tema = st.selectbox("Selecciona un tema:", [
