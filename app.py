@@ -34,7 +34,10 @@ st.markdown("""
 # Título principal
 st.markdown('<div class="titulo">🌈 ¡Bienvenidx a <i>ESInformación</i>! 🧠💬</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitulo">Un espacio seguro para aprender sobre Educación Sexual Integral (ESI)</div>', unsafe_allow_html=True)
-st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=100)
+print("La Educación Sexual Integral busca brindar a los estudiantes información confiable sobre su cuerpo, la sexualidad y la afectividad, para que puedan tomar decisiones libres y responsables.")
+print("Promueve el respeto por uno mismo y por los demás, fomenta relaciones sanas y equitativas, y ayuda a prevenir la violencia, los embarazos no deseados y las infecciones de transmisión sexual.")
+print("Además, enseña a valorar la diversidad, cuestionar estereotipos de género y fortalecer la autoestima, el autocuidado y la autoafirmación.")
+
 
 # Inputs iniciales
 nombre = st.text_input("¿Cómo te llamas?")
@@ -59,29 +62,92 @@ if nombre and edad:
     if opcion == "1. ¿Qué es la ESI?":
         st.header("📌 ¿Qué es la ESI?")
         st.write("""
-            La Educación Sexual Integral (ESI) es un programa del MINEDU que busca brindar información,
-            habilidades y valores a estudiantes para que puedan tomar decisiones informadas, saludables
-            y responsables sobre su sexualidad. Tiene carácter de prevenir/reducir embarazos adolescentes,
-            violencia sexual, uniones tempranas y problemas de salud relacionados. Además, no solo está dirigida
-            a estudiantes, sino también a docentes y familiares, mediante acciones formativas, preventivas y de
-            fortalecimiento de capacidades.
+La Educación Sexual Integral, más conocida como la ESI, es un programa del MINEDU que busca brindar información, habilidades y valores a estudiantes para que puedan tomar decisiones informadas, saludables y responsables sobre su sexualidad.
+
+Tiene carácter de prevenir/reducir embarazos adolescentes, violencia sexual, uniones tempranas y problemas de salud relacionados.
+
+Además, no solo está dirigida a estudiantes, sino también a docentes y familiares, mediante acciones formativas, preventivas y de fortalecimiento de capacidades.
         """)
 
     elif opcion == "2. Métodos anticonceptivos":
-        metodo = st.selectbox("Selecciona un método para conocer más:", [
-            "Condón", "Pastillas anticonceptivas", "Inyecciones", "Implante subdérmico",
-            "SIU - Sistema intrauterino hormonal", "DIU - Dispositivo intrauterino de cobre", "Anticoncepción oral de emergencia (AOE)"
-        ])
-        info = {
-            "Condón": "\n✅ Condón:\nBrinda doble protección: contra embarazos no planificados y contra ITS, incluyendo VIH.\nDebe colocarse antes del acto sexual. Eficacia: masculino 85%, femenino 79% en uso común.",
-            "Pastillas anticonceptivas": "\n✅ Pastillas anticonceptivas:\nMétodo hormonal diario que inhibe la ovulación y espesa el moco cervical.\nEficacia del 99.7% si se usa correctamente. También protege contra algunos tipos de cáncer.",
-            "Inyecciones": "\n✅ Inyecciones:\nDetienen la ovulación. Existen versiones mensuales y trimestrales.\nEficacia mensual 99.5%, trimestral 99.7%. Se aplican en centros de salud.",
-            "Implante subdérmico": "\n✅ Implante subdérmico:\nPequeña varilla bajo la piel del brazo. Libera hormonas y protege hasta 3 años.\nEficacia del 99.95%. Puede afectar el ciclo menstrual.",
-            "SIU - Sistema intrauterino hormonal": "\n✅ SIU - Sistema intrauterino hormonal:\nDispositivo que se coloca en el útero y libera hormonas. Protege hasta 5 años.\nEficacia del 99.5%. Colocación y retiro por profesional de salud.",
-            "DIU - Dispositivo intrauterino de cobre": "\n✅ DIU - Dispositivo intrauterino de cobre:\nPequeño dispositivo sin hormonas que previene la fecundación. Dura hasta 12 años.\nEficacia del 99.4%. No interfiere con el acto sexual.",
-            "Anticoncepción oral de emergencia (AOE)": "\n✅ Anticoncepción oral de emergencia (AOE):\nUso solo en emergencias. Hasta 72 horas después del acto sexual sin protección.\nEficacia de hasta 95%, cuanto antes se use, mejor. No es método regular."
-        }
-        st.write(info[metodo])
+        st.header("📌 Métodos Anticonceptivos")
+        st.markdown("""
+        A continuación, verás los métodos anticonceptivos más comunes. Haz clic en cada uno para ver su información completa.
+        """)
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+            if st.button("🧴 Condón"):
+                st.image("https://www.salud.mapfre.es/media/2021/04/condon.jpg", width=300)
+                st.write("""
+✅ **Condón**
+- Brinda doble protección: contra embarazos no planificados y contra ITS, incluyendo VIH.
+- Debe colocarse antes del acto sexual.
+- Eficacia: masculino 85%, femenino 79% en uso común.
+""")
+
+            if st.button("💊 Pastillas anticonceptivas"):
+                st.image("https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg", width=300)
+                st.write("""
+✅ **Pastillas anticonceptivas**
+- Método hormonal diario que inhibe la ovulación y espesa el moco cervical.
+- Eficacia del 99.7% si se usa correctamente.
+- También protege contra algunos tipos de cáncer.
+""")
+
+            if st.button("💉 Inyecciones"):
+                st.image("https://www.gob.pe/institucion/minsa/noticias/489497-uso-de-inyectables-anticonceptivos-es-una-alternativa-segura-para-prevenir-embarazos-no-deseados", width=300)
+                st.write("""
+✅ **Inyecciones**
+- Detienen la ovulación. Existen versiones mensuales y trimestrales.
+- Eficacia mensual 99.5%, trimestral 99.7%.
+- Se aplican en centros de salud.
+""")
+
+        with col2:
+            if st.button("📍 Implante subdérmico"):
+                st.image("https://www.nexplanonusa.com/assets/images/nx_diagram_2.png", width=300)
+                st.write("""
+✅ **Implante subdérmico**
+- Pequeña varilla bajo la piel del brazo. Libera hormonas y protege hasta 3 años.
+- Eficacia del 99.95%.
+- Puede afectar el ciclo menstrual.
+""")
+
+            if st.button("⚙️ SIU - Sistema intrauterino hormonal"):
+                st.image("https://www.healthychildren.org/SiteCollectionImagesArticleImages/IUD.jpg", width=300)
+                st.write("""
+✅ **SIU - Sistema intrauterino hormonal**
+- Dispositivo que se coloca en el útero y libera hormonas. Protege hasta 5 años.
+- Eficacia del 99.5%.
+- Colocación y retiro por profesional de salud.
+""")
+
+            if st.button("🧲 DIU - Dispositivo intrauterino de cobre"):
+                st.image("https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/55/40/554029cd-066e-4d9e-873d-bc35283f9628/iud_illustration.jpg__800x600_q85_crop_subsampling-2.jpg", width=300)
+                st.write("""
+✅ **DIU - Dispositivo intrauterino de cobre**
+- Pequeño dispositivo sin hormonas que previene la fecundación. Dura hasta 12 años.
+- Eficacia del 99.4%.
+- No interfiere con el acto sexual.
+""")
+
+            if st.button("🚨 AOE - Anticoncepción Oral de Emergencia"):
+                st.image("https://cdn.pixabay.com/photo/2017/08/06/12/39/contraceptive-2595580_1280.jpg", width=300)
+                st.write("""
+✅ **Anticoncepción oral de emergencia (AOE)**
+- Uso solo en emergencias.
+- Hasta 72 horas después del acto sexual sin protección.
+- Eficacia de hasta 95%, cuanto antes se use, mejor.
+- No es un método regular.
+""")
+
+# Pie
+st.markdown("""
+---
+<center>Gracias por usar <b>ESInformación</b> 💜</center>
+""", unsafe_allow_html=True)
 
     elif opcion == "3. Mitos y verdades":
         st.header("🎮 Juguemos: ¿Mito o Verdad?")
