@@ -4,19 +4,22 @@ import streamlit as st
 # Configuración general
 st.set_page_config(page_title="ESInformación 🧠💬", page_icon="🌈", layout="centered")
 
-# Estilos personalizados
+# Estilos personalizados y fondo cálido
 st.markdown("""
     <style>
+    body {
+        background-color: #fff4f8;
+    }
     .titulo {
-        font-size: 2.2em;
+        font-size: 2.5em;
         font-weight: bold;
-        color: #eb8ec7;
+        color: #cc2b5e;
         text-align: center;
         margin-bottom: 10px;
     }
     .subtitulo {
         font-size: 1.3em;
-        color: #4b0082;
+        color: #753a88;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -27,6 +30,12 @@ st.markdown("""
         padding: 10px;
         font-weight: bold;
         border: 2px solid #eb8ec7;
+        transition: all 0.3s ease-in-out;
+    }
+    .stButton>button:hover {
+        background-color: #fcb0d8;
+        color: white;
+        transform: scale(1.05);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -35,7 +44,7 @@ st.markdown("""
 st.markdown('<div class="titulo">🌈 ¡Bienvenidx a <i>ESInformación</i>! 🧠💬</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitulo">Un espacio seguro para aprender sobre Educación Sexual Integral (ESI)</div>', unsafe_allow_html=True)
 
-# Presentación de la ESI
+# Presentación
 st.write("""
 La Educación Sexual Integral busca brindar a los estudiantes información confiable sobre su cuerpo, la sexualidad y la afectividad, para que puedan tomar decisiones libres y responsables.
 
@@ -44,9 +53,9 @@ Promueve el respeto por uno mismo y por los demás, fomenta relaciones sanas y e
 Además, enseña a valorar la diversidad, cuestionar estereotipos de género y fortalecer la autoestima, el autocuidado y la autoafirmación.
 """)
 
-# Inputs iniciales
+# Inputs
 nombre = st.text_input("¿Cómo te llamas?")
-edad = st.number_input("¿Cuántos años tienes?", min_value=0, step=1, key="edad")
+edad = st.number_input("¿Cuántos años tienes?", min_value=0, step=1)
 
 if nombre and edad:
     if edad < 18:
@@ -64,7 +73,7 @@ if nombre and edad:
         "6. Identidad de género y orientación sexual"
     ])
 
-    # Secciones temáticas
+    # === SECCIÓN 1 ===
     if opcion == "1. ¿Qué es la ESI?":
         st.header("📌 ¿Qué es la ESI?")
         st.write("""
@@ -75,164 +84,98 @@ Tiene como objetivos prevenir/reducir embarazos adolescentes, violencia sexual, 
 Además, no solo está dirigida a estudiantes, sino también a docentes y familiares, mediante acciones formativas, preventivas y de fortalecimiento de capacidades.
         """)
 
-elif opcion == "2. Métodos anticonceptivos":
-    st.header("📌 Métodos Anticonceptivos")
-    st.markdown("Haz clic para conocer más sobre cada método:")
+    # === SECCIÓN 2 ===
+    elif opcion == "2. Métodos anticonceptivos":
+        st.header("📌 Métodos Anticonceptivos")
+        st.markdown("Haz clic para conocer más sobre cada método:")
 
-    metodos = {
-        "🧴 Condón": {
-            "img": "https://www.salud.mapfre.es/media/2021/04/condon.jpg",
-            "desc": """
-**Condón**  
-- Doble protección: embarazo e ITS.  
-- Uso externo.  
-- Masculino 85%, femenino 79% (uso común)."""
-        },
-        "💊 Pastillas anticonceptivas": {
-            "img": "https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg",
-            "desc": """
-**Pastillas anticonceptivas**  
-- Diarias.  
-- 99.7% eficacia (uso correcto).  
-- Regulan el ciclo y reducen algunos riesgos de cáncer."""
-        },
-        "💉 Inyecciones": {
-            "img": "https://cdn.pixabay.com/photo/2020/05/19/19/39/syringe-5193891_1280.jpg",
-            "desc": """
-**Inyecciones**  
-- Mensuales o trimestrales.  
-- 99.5% – 99.7% de eficacia.  
-- Aplicación en centro de salud."""
-        },
-        "📍 Implante subdérmico": {
-            "img": "https://www.nexplanonusa.com/assets/images/nx_diagram_2.png",
-            "desc": """
-**Implante subdérmico**  
-- Varilla en el brazo.  
-- Hasta 3 años.  
-- 99.95% eficacia."""
-        },
-        "⚙️ SIU Hormonal": {
-            "img": "https://www.healthychildren.org/SiteCollectionImagesArticleImages/IUD.jpg",
-            "desc": """
-**SIU Hormonal**  
-- Dentro del útero.  
-- Libera hormonas por 5 años.  
-- 99.5% eficaz."""
-        },
-        "🧲 DIU de cobre": {
-            "img": "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/55/40/554029cd-066e-4d9e-873d-bc35283f9628/iud_illustration.jpg__800x600_q85_crop_subsampling-2.jpg",
-            "desc": """
-**DIU de cobre**  
-- Sin hormonas.  
-- Protege hasta 12 años.  
-- 99.4% eficaz."""
-        },
-        "🚨 AOE": {
-            "img": "https://cdn.pixabay.com/photo/2017/08/06/12/39/contraceptive-2595580_1280.jpg",
-            "desc": """
-**AOE (pastilla de emergencia)**  
-- Solo para emergencias.  
-- Hasta 72h después.  
-- 95% eficaz si se toma pronto."""
+        metodos = {
+            "🧴 Condón": {
+                "img": "https://www.salud.mapfre.es/media/2021/04/condon.jpg",
+                "desc": "**Condón**\n- Doble protección: embarazo e ITS.\n- Uso externo.\n- Eficacia: masculino 85%, femenino 79%."
+            },
+            "💊 Pastillas anticonceptivas": {
+                "img": "https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg",
+                "desc": "**Pastillas anticonceptivas**\n- Uso diario.\n- 99.7% eficacia.\n- Requiere control médico."
+            },
+            "💉 Inyecciones": {
+                "img": "https://cdn.pixabay.com/photo/2020/05/19/19/39/syringe-5193891_1280.jpg",
+                "desc": "**Inyecciones**\n- Mensuales o trimestrales.\n- Eficacia entre 99.5% y 99.7%."
+            },
+            "📍 Implante subdérmico": {
+                "img": "https://www.nexplanonusa.com/assets/images/nx_diagram_2.png",
+                "desc": "**Implante subdérmico**\n- Dura hasta 3 años.\n- 99.95% eficaz."
+            },
+            "⚙️ SIU Hormonal": {
+                "img": "https://www.healthychildren.org/SiteCollectionImagesArticleImages/IUD.jpg",
+                "desc": "**SIU Hormonal**\n- Dispositivo en útero con hormonas.\n- Dura hasta 5 años."
+            },
+            "🧲 DIU de cobre": {
+                "img": "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/55/40/554029cd-066e-4d9e-873d-bc35283f9628/iud_illustration.jpg__800x600_q85_crop_subsampling-2.jpg",
+                "desc": "**DIU de cobre**\n- Sin hormonas.\n- Dura hasta 12 años.\n- 99.4% eficaz."
+            },
+            "🚨 AOE": {
+                "img": "https://cdn.pixabay.com/photo/2017/08/06/12/39/contraceptive-2595580_1280.jpg",
+                "desc": "**AOE (pastilla de emergencia)**\n- Solo en emergencias.\n- Hasta 72h después del acto sexual."
+            }
         }
-    }
 
-    for metodo, info in metodos.items():
-        with st.expander(metodo):
-            st.image(info["img"], use_column_width=True)
-            st.markdown(info["desc"])
+        for metodo, info in metodos.items():
+            with st.expander(metodo):
+                st.image(info["img"], use_column_width=True)
+                st.markdown(info["desc"])
 
+    # === SECCIÓN 3 ===
+    elif opcion == "3. Mitos y verdades":
+        st.header("🎮 ¿Mito o Verdad?")
+        st.write("Responde y descubre si tu respuesta es correcta.")
 
-elif opcion == "3. Mitos y verdades":
-    st.header("🎮 ¿Mito o Verdad?")
-    st.write("Responde cada afirmación. Luego de responder, verás la explicación.")
+        preguntas = [
+            {
+                "preg": "La educación sexual en la escuela interfiere con lo que enseñan en casa.",
+                "rpta": "mito",
+                "exp": "La ESI complementa lo aprendido en familia.",
+                "img": "https://cdn-icons-png.flaticon.com/512/3839/3839959.png"
+            },
+            {
+                "preg": "Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales.",
+                "rpta": "mito",
+                "exp": "La ESI ayuda a tomar decisiones informadas y retrasar el inicio sexual.",
+                "img": "https://cdn-icons-png.flaticon.com/512/2124/2124516.png"
+            },
+            {
+                "preg": "La ESI enseña sobre identidad de género sin imponer orientación.",
+                "rpta": "verdad",
+                "exp": "La ESI enseña a no discriminar y valorar la diversidad.",
+                "img": "https://cdn-icons-png.flaticon.com/512/3613/3613273.png"
+            }
+        ]
 
-    preguntas = [
-        {
-            "preg": "La educación sexual en la escuela interfiere con lo que enseñan en casa.",
-            "rpta": "mito",
-            "exp": "La ESI complementa lo aprendido en familia.",
-            "img": "https://cdn-icons-png.flaticon.com/512/3839/3839959.png"
-        },
-        {
-            "preg": "Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales.",
-            "rpta": "mito",
-            "exp": "Está demostrado que la ESI retrasa el inicio sexual.",
-            "img": "https://cdn-icons-png.flaticon.com/512/2124/2124516.png"
-        },
-        {
-            "preg": "La ESI enseña sobre identidad de género sin imponer orientación.",
-            "rpta": "verdad",
-            "exp": "La ESI enseña a no discriminar y valorar la diversidad.",
-            "img": "https://cdn-icons-png.flaticon.com/512/3613/3613273.png"
-        }
-    ]
+        for i, item in enumerate(preguntas, 1):
+            st.image(item["img"], width=100)
+            st.markdown(f"**{i}. {item['preg']}**")
+            respuesta = st.radio("Elige una opción:", ["mito", "verdad"], key=f"mito{i}")
+            if respuesta:
+                if respuesta == item["rpta"]:
+                    st.success("✔️ ¡Correcto!")
+                else:
+                    st.error("❌ Incorrecto")
+                st.info(item["exp"])
+                st.markdown("---")
 
-    for i, item in enumerate(preguntas, 1):
-        st.markdown(f"**{i}. {item['preg']}**")
-        st.image(item["img"], width=100)
-        respuesta = st.radio("Elige una opción:", ["mito", "verdad"], key=f"mito{i}")
-        if respuesta:
-            if respuesta == item["rpta"]:
-                st.success("✔️ ¡Correcto!")
-            else:
-                st.error("❌ Incorrecto")
-            st.info(item["exp"])
-            st.markdown("---")
+    # Puedes mantener tus secciones 4, 5 y 6 igual
 
-    elif opcion == "4. Autocuidado digital y sexting":
-        tema = st.selectbox("Selecciona un tema:", [
-            "¿Qué es el sexting?",
-            "Cómo evitar ser víctima de la difusión de material íntimo",
-            "Responsabilidad legal ante estas acciones",
-            "Recursos y ayuda"
-        ])
-        contenidos = {
-            "¿Qué es el sexting?": "Es el intercambio de contenido íntimo. Puede ser riesgoso, especialmente en menores. Solo es válido si hay consentimiento.",
-            "Cómo evitar ser víctima de la difusión de material íntimo": "Evalúa con quién compartes. Si recibes algo íntimo sin consentimiento, elimínalo.",
-            "Responsabilidad legal ante estas acciones": "La pena puede ser de 2 a 6 años de prisión. Depende del vínculo con la víctima.",
-            "Recursos y ayuda": "Llama gratis al 1818 o (01) 431-8898. También puedes escribir a divindat.depcpi@policia.gob.pe"
-        }
-        st.write(contenidos[tema])
+    # === SECCIÓN FEEDBACK ===
+    st.subheader("🗣️ ¿Te gustó la experiencia?")
+    satisfaccion = st.slider("Del 1 al 10, ¿qué tanto te gustó esta app?", 1, 10)
+    comentarios = st.text_area("¿Tienes alguna sugerencia o comentario?", "")
+    if st.button("Enviar opinión"):
+        st.success("✅ ¡Gracias por tu feedback! 💌")
 
-    elif opcion == "5. Relaciones afectivas y vínculos sanos":
-        pareja = st.radio("¿Tienes pareja?", ["sí", "no"])
-        st.write("Gracias por compartir 💖" if pareja == "sí" else "¡Perfecto! También es útil para el futuro 💬.")
-
-        tema = st.selectbox("Selecciona un tema:", [
-            "Distinguir amor, atracción y deseo",
-            "¿Qué es el amor?",
-            "Señales de relaciones tóxicas",
-            "¿Estoy en una relación tóxica?"
-        ])
-        respuestas = {
-            "Distinguir amor, atracción y deseo": "El deseo es físico; la atracción, emocional; y el amor, un compromiso profundo.",
-            "¿Qué es el amor?": "Una conexión emocional, física y espiritual que genera bienestar y realización.",
-            "Señales de relaciones tóxicas": "- Control\n- Manipulación\n- Crítica constante\n- Aislamiento\n- Minimización de tus emociones",
-            "¿Estoy en una relación tóxica?": "Hazte preguntas como: ¿Me apoya? ¿Respeta mis decisiones? ¿Puedo ser yo misma/o/x? Si dudas, busca ayuda."
-        }
-        st.write(respuestas[tema])
-
-    elif opcion == "6. Identidad de género y orientación sexual":
-        tema = st.selectbox("Selecciona un tema:", [
-            "¿Qué es el sexo?",
-            "¿Qué es el género?",
-            "¿Qué es la identidad de género?",
-            "¿Qué es la orientación sexual?"
-        ])
-        respuestas = {
-            "¿Qué es el sexo?": "Es la asignación al nacer basada en genitales y cromosomas.",
-            "¿Qué es el género?": "Es una construcción social sobre roles y expectativas.",
-            "¿Qué es la identidad de género?": "Es cómo una persona se siente y se expresa respecto al género.",
-            "¿Qué es la orientación sexual?": "Es la atracción emocional, sexual o afectiva hacia otros."
-        }
-        st.write(respuestas[tema])
-
-# Pie de página
+# === PIE DE PÁGINA ===
 st.markdown("""
 <hr>
-<div style='text-align:center;'>
+<div style='text-align:center; color: #753a88;'>
 Gracias por usar <b>ESInformación</b> 💜
 </div>
 """, unsafe_allow_html=True)
