@@ -126,56 +126,95 @@ Además, no solo está dirigida a estudiantes, sino también a docentes y famili
                 st.markdown(info["desc"])
 
     # === SECCIÓN 3 ===
-    elif opcion == "3. Mitos y verdades":
+    if opcion == "3. Mitos y verdades":
         st.header("🎮 ¿Mito o Verdad?")
-        st.write("Responde y descubre si tu respuesta es correcta.")
-
         preguntas = [
-            {
-                "preg": "La educación sexual en la escuela interfiere con lo que enseñan en casa.",
-                "rpta": "mito",
-                "exp": "La ESI complementa lo aprendido en familia.",
-                "img": "https://cdn-icons-png.flaticon.com/512/3839/3839959.png"
-            },
-            {
-                "preg": "Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales.",
-                "rpta": "mito",
-                "exp": "La ESI ayuda a tomar decisiones informadas y retrasar el inicio sexual.",
-                "img": "https://cdn-icons-png.flaticon.com/512/2124/2124516.png"
-            },
-            {
-                "preg": "La ESI enseña sobre identidad de género sin imponer orientación.",
-                "rpta": "verdad",
-                "exp": "La ESI enseña a no discriminar y valorar la diversidad.",
-                "img": "https://cdn-icons-png.flaticon.com/512/3613/3613273.png"
-            }
+            ("La educación sexual en la escuela interfiere con lo que enseñan en casa.", "mito", "La ESI complementa lo aprendido en familia."),
+            ("Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales.", "mito", "La ESI retrasa el inicio sexual."),
+            ("La ESI enseña sobre identidad de género sin imponer orientación.", "verdad", "La ESI enseña a no discriminar y valorar la diversidad."),
+            ("Los anticonceptivos afectan permanentemente la fertilidad.", "mito", "La mayoría son reversibles si se usan correctamente."),
+            ("El respeto y consentimiento son claves para toda relación.", "verdad", "Sin consentimiento no hay respeto ni salud sexual.")
         ]
-
-        for i, item in enumerate(preguntas, 1):
-            st.image(item["img"], width=100)
-            st.markdown(f"**{i}. {item['preg']}**")
-            respuesta = st.radio("Elige una opción:", ["mito", "verdad"], key=f"mito{i}")
-            if respuesta:
-                if respuesta == item["rpta"]:
+        aciertos = 0
+        for i, (preg, correcta, exp) in enumerate(preguntas):
+            st.markdown(f"**{i+1}. {preg}**")
+            rpta = st.radio("¿Qué opinas?", ["", "mito", "verdad"], key=f"rpta_{i}")
+            if rpta:
+                if rpta == correcta:
                     st.success("✔️ ¡Correcto!")
+                    aciertos += 1
                 else:
                     st.error("❌ Incorrecto")
-                st.info(item["exp"])
+                st.info(exp)
                 st.markdown("---")
 
+        if aciertos >= 3:
+            st.balloons()
+            st.success(f"🎉 ¡Felicidades {nombre}! Acertaste {aciertos} de 5 preguntas.")
+
     # Puedes mantener tus secciones 4, 5 y 6 igual
+    elif opcion == "4. Autocuidado digital y sexting":
+        st.header("📱 Autocuidado Digital y Sexting")
+        st.markdown("""
+### Consentimiento - Sexting
+El sexting es el intercambio de imágenes o videos de contenido sexual mediante mensajes o redes. Puede ser riesgoso, especialmente en menores, y derivar en abuso sexual. No es aceptable si no hay consentimiento. Presionar a alguien a enviar fotos íntimas es ilegal.
 
+### Cómo evitar la difusión de contenido íntimo
+La difusión sin autorización de material íntimo viola el derecho a la privacidad, libertad de expresión y derechos sexuales. Evalúa bien a quién se lo compartes. Si recibes contenido sin consentimiento, elimínalo.
+
+### Responsabilidad ante estas acciones
+Difundir material íntimo puede ser penado con hasta 6 años de prisión. Además, pueden sumarse sanciones económicas.
+
+### Recursos y ayuda
+Puedes denunciar con pruebas en la División de Delitos de Alta Tecnología de la Policía Nacional. Llama gratis al 1818 o al (01) 431-8898, o escribe a divindat.depcpi@policia.gob.pe.
+""")
+
+    elif opcion == "5. Relaciones afectivas y vínculos sanos":
+        st.header("💞 Relaciones afectivas y vínculos sanos")
+        st.markdown("""
+### Amor, atracción y deseo
+El deseo es atracción física y sexual. La atracción romántica involucra emociones y euforia. El amor es una conexión profunda, emocional, física y espiritual.
+
+### ¿Qué es el amor?
+Es un sentimiento complejo que da plenitud, felicidad y conexión con otros.
+
+### Señales de relaciones tóxicas
+- Control y celos excesivos  
+- Manipulación emocional ("si me amaras...")  
+- Comunicación dañina (críticas, silencio castigador, gaslighting)  
+- Ignorar tus necesidades o emociones  
+- Minimizar lo que sientes
+
+### ¿Estoy en una relación tóxica?
+Hazte preguntas: ¿Te respeta? ¿Te manipula? ¿Te aísla? Si muchas respuestas son negativas, busca apoyo emocional profesional.
+""")
+
+    elif opcion == "6. Identidad de género y orientación sexual":
+        st.header("🏳️‍🌈 Identidad de género y orientación sexual")
+        st.markdown("""
+### Sexo
+Asignado al nacer por características físicas y cromosómicas.
+
+### Género
+Es una construcción social, cultural y legal sobre los roles esperados.
+
+### Identidad de género
+Cómo te identificas y expresas tu género (ropa, lenguaje, conducta). Puede o no coincidir con tu sexo asignado.
+
+### Orientación sexual
+Es la atracción emocional, afectiva o sexual hacia otras personas. Puede ser homosexual, bisexual, asexual, entre otras.
+""")
     # === SECCIÓN FEEDBACK ===
-    st.subheader("🗣️ ¿Te gustó la experiencia?")
-    satisfaccion = st.slider("Del 1 al 10, ¿qué tanto te gustó esta app?", 1, 10)
-    comentarios = st.text_area("¿Tienes alguna sugerencia o comentario?", "")
-    if st.button("Enviar opinión"):
-        st.success("✅ ¡Gracias por tu feedback! 💌")
+st.markdown("## 🙋‍♀️ Califícanos")
+experiencia = st.selectbox("¿Te gustó la experiencia en ESInformación?", ["", "⭐ Muy mala", "⭐⭐ Mala", "⭐⭐⭐ Regular", "⭐⭐⭐⭐ Buena", "⭐⭐⭐⭐⭐ Excelente"])
+if experiencia:
+    st.success("¡Gracias por tu calificación!")
 
-# === PIE DE PÁGINA ===
+# Pie de página
 st.markdown("""
 <hr>
-<div style='text-align:center; color: #753a88;'>
+<div style='text-align:center;'>
 Gracias por usar <b>ESInformación</b> 💜
 </div>
 """, unsafe_allow_html=True)
+
