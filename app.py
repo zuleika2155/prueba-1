@@ -63,15 +63,19 @@ if nombre and edad:
     else:
         st.success(f"Gracias por confiar en nosotros, {nombre}. Esta herramienta es útil para todxs 🧡.")
 
-    opcion = st.selectbox("¿Qué te gustaría conocer en *ESInformación*?", [
-        "Selecciona una opción",
-        "1. ¿Qué es la ESI?",
-        "2. Métodos anticonceptivos",
-        "3. Mitos y verdades",
-        "4. Autocuidado digital y sexting",
-        "5. Relaciones afectivas y vínculos sanos",
-        "6. Identidad de género y orientación sexual"
-    ])
+st.markdown("<div class='subtitulo'>¿Qué te gustaría conocer en <i>ESInformación</i>?</div>", unsafe_allow_html=True)
+
+with st.container():
+    with st.expander("Haz clic para explorar los temas disponibles", expanded=True):
+        opcion = st.selectbox("", [
+            "Selecciona una opción",
+            "1. ¿Qué es la ESI?",
+            "2. Métodos anticonceptivos",
+            "3. Mitos y verdades",
+            "4. Autocuidado digital y sexting",
+            "5. Relaciones afectivas y vínculos sanos",
+            "6. Identidad de género y orientación sexual"
+        ], key="temas")
 
     # === SECCIÓN 1 ===
     if opcion == "1. ¿Qué es la ESI?":
