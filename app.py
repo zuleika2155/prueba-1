@@ -287,20 +287,30 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
     "7. ¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
 ]
 
+
 for pregunta in preguntas:
     st.markdown(f"- {pregunta}")
 
-if st.button("Mostrar mensaje"):
+# Inicializar el estado si no existe
+if "mostrar_mensaje" not in st.session_state:
+    st.session_state.mostrar_mensaje = False
+
+# Botón para mostrar el mensaje
+if st.button("Mostrar mensaje de reflexión"):
+    st.session_state.mostrar_mensaje = True
+
+# Mostrar el mensaje si el botón fue presionado
+if st.session_state.mostrar_mensaje:
     st.subheader("💡 Reflexión")
     st.markdown("""
-    Si al leer estas preguntas sentiste incomodidad, o te identificaste con varias situaciones, es importante que prestes atención a tu relación.
-    
+    Si al leer estas preguntas sentiste incomodidad o te identificaste con varias situaciones, es importante que prestes atención a tu relación.
+
     En una relación saludable:
     - Se respeta tu individualidad.
     - Tus emociones son validadas, no ridiculizadas.
     - No se recurre al control ni al chantaje.
     - Puedes crecer, desarrollarte y sentirte segura/o.
 
-    Si algo no te hace bien, no estás exagerando. Tu bienestar emocional es lo más importante. Hablar con alguien de confianza o con un/a profesional puede ayudarte a ver las cosas con más claridad.
+    Si algo no te hace bien, no estás exagerando. Tu bienestar emocional es lo más importante. 
+    Habla con alguien de confianza o con un/a profesional. Mereces una relación basada en el respeto y el amor propio.
     """)
-
