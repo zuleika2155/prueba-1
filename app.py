@@ -319,25 +319,23 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
         with col1:
             st.subheader("🧬 Sexo")
             st.image(
-                "https://images.unsplash.com/photo-1575302144068-7c17243fe6b2?auto=format&fit=crop&w=400&q=80",
+                "https://plus.unsplash.com/premium_vector-1727956884275-8a8148de508c?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption="El sexo se asigna al nacer"
             )
             st.write(
                 "Es la etiqueta que se nos asigna al nacer, generalmente por un doctor, basándose en nuestros genitales y cromosomas. "
                 "Se registra en el certificado de nacimiento como “masculino” o “femenino”. "
-                "[Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)"
             )
 
         with col2:
             st.subheader("🟣 Género")
             st.image(
-                "https://images.unsplash.com/photo-1601572142064-6e20e3ac9b87?auto=format&fit=crop&w=400&q=80",
+                "https://images.unsplash.com/photo-1605818363303-7073f9171de9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption="El género es una construcción social"
             )
             st.write(
                 "Es una construcción legal, social y cultural que establece normas, expectativas y roles sobre cómo deben comportarse las personas "
                 "según su sexo asignado. "
-                "[Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)"
             )
 
         st.divider()
@@ -353,20 +351,18 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                 "Es cómo cada persona se siente y se percibe a sí misma en relación con el género. "
                 "No está determinada por el cuerpo, sino por una experiencia interna y única. "
                 "Se expresa con la ropa, la voz, el lenguaje corporal y puede o no coincidir con el sexo asignado. "
-                "[Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)"
             )
 
         with col4:
             st.subheader("💘 Orientación sexual")
             st.image(
-                "https://images.unsplash.com/photo-1520975918311-2685a7982052?auto=format&fit=crop&w=400&q=80",
+                "https://images.unsplash.com/photo-1717700191408-35bb236d2cae?q=80&w=1183&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D,
                 caption="A quién te atrae"
             )
             st.write(
                 "Es la atracción emocional, romántica, sexual o afectiva hacia otras personas. "
                 "Se diferencia del sexo biológico o de la identidad de género. "
                 "Entre las más comunes: homosexualidad, bisexualidad, asexualidad. "
-                "[Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)"
             )
 
         st.success("✨ Todas las formas de identidad y orientación son válidas. ¡Vive con autenticidad y respeto!")
