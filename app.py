@@ -330,7 +330,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
         with col2:
             st.subheader("🟣 Género")
             st.image(
-                "https://images.unsplash.com/photo-1605818363303-7073f9171de9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1545693315-85b6be26a3d6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption="El género es una construcción social"
             )
             st.write(
@@ -344,7 +344,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
         with col3:
             st.subheader("🧠 Identidad de género")
             st.image(
-                "https://images.unsplash.com/photo-1603791452906-c1f1b7c5f103?auto=format&fit=crop&w=400&q=80",
+                "https://images.unsplash.com/photo-1605818363303-7073f9171de9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption="Cómo te sientes contigo"
             )
             st.write(
