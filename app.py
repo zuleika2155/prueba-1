@@ -266,53 +266,56 @@ Cambiar tu comportamiento, vestimenta o incluso tener relaciones sexuales sin ga
 Minimizar tus emociones:
 Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que sientes. En una relación sana, se validan las emociones, no se ridiculizan.
 """
+            },
+            {
+                "icono": "❓",
+                "titulo": "¿Estoy en una relación tóxica?",
+                "contenido": "Haz clic aquí para responder algunas preguntas y descubrirlo."
             }
         ]
 
         for tarjeta in tarjetas:
             if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
-                st.markdown(f"""
-                <div class='card'>
-                    <div class='card-icon'>{tarjeta['icono']}</div>
-                    <div class='card-title'>{tarjeta['titulo']}</div>
-                    <div class='card-content'>{tarjeta['contenido']}</div>
-                </div>
-                """, unsafe_allow_html=True)
+                if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
+                    preguntas = [
+                        "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
+                        "¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
+                        "¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
+                        "¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
+                        "¿Sientes que recurre al chantaje emocional para salirse con la suya?",
+                        "¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
+                        "¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
+                    ]
+
+                    respuestas_negativas = 0
+                    for i, pregunta in enumerate(preguntas):
+                        respuesta = st.radio(pregunta, ["Sí", "No"], key=f"pregunta_{i}")
+                        if respuesta == "No":
+                            respuestas_negativas += 1
+
+                    if respuestas_negativas >= 4:
+                        st.error("🚨 ¡Alerta! Estas respuestas indican señales de una relación tóxica.")
+                        st.markdown("""
+                        ### 😟 Necesitas apoyo
+                        De ser el caso, puedes hablar con un psicólogo, el cual puede ayudarte a encontrar claridad y recuperar tu autoestima. Nadie puede hacerte sentir mal o inferior.
+                        """)
+                    elif respuestas_negativas == 3:
+                        st.warning("👏 Vas por buen camino, pero hay señales a tener en cuenta.")
+                    elif respuestas_negativas == 2:
+                        st.info("🤔 ¡Tú puedes! Reflexiona sobre tu bienestar y confianza.")
+                    else:
+                        st.success("💪 ¡Muy bien! Parece que estás en una relación saludable.")
+                else:
+                    st.markdown(f"""
+                    <div class='card'>
+                        <div class='card-icon'>{tarjeta['icono']}</div>
+                        <div class='card-title'>{tarjeta['titulo']}</div>
+                        <div class='card-content'>{tarjeta['contenido']}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
 
-    elif opcion == "7. ¿Estoy en una relación tóxica?":
-        st.header("🔍 ¿Estoy en una relación tóxica?")
-
-        preguntas = [
-            "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
-            "¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
-            "¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
-            "¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
-            "¿Sientes que recurre al chantaje emocional para salirse con la suya?",
-            "¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
-            "¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
-        ]
-
-        respuestas_negativas = 0
-
-        for i, pregunta in enumerate(preguntas):
-            respuesta = st.radio(pregunta, ["Sí", "No"], key=f"pregunta_{i}")
-            if respuesta == "No":
-                respuestas_negativas += 1
-
-        if respuestas_negativas >= 4:
-            st.error("🚨 ¡Alerta! Estas respuestas indican señales de una relación tóxica.")
-            st.markdown("""
-            ### 😟 Necesitas apoyo
-            De ser el caso, puedes hablar con un psicólogo, el cual puede ayudarte a encontrar claridad y recuperar tu autoestima. Nadie puede hacerte sentir mal o inferior.
-            """)
-        elif respuestas_negativas == 3:
-            st.warning("👏 Vas por buen camino, pero hay señales a tener en cuenta.")
-        elif respuestas_negativas == 2:
-            st.info("🤔 ¡Tú puedes! Reflexiona sobre tu bienestar y confianza.")
-        else:
-            st.success("💪 ¡Muy bien! Parece que estás en una relación saludable.")
 
 #OPCION 6
     elif opcion == "6. Identidad de género y orientación sexual":
