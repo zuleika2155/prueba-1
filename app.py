@@ -77,25 +77,28 @@ with st.container():
             "6. Identidad de género y orientación sexual"
         ], key="temas")
 
-    # === SECCIÓN 1 ===
     if opcion == "1. ¿Qué es la ESI?":
         st.header("📌 ¿Qué es la ESI?")
-        st.write("""
-La Educación Sexual Integral, más conocida como la ESI, es un programa del MINEDU que busca brindar información, habilidades y valores a estudiantes para que puedan tomar decisiones informadas, saludables y responsables sobre su sexualidad.
+        st.markdown("""
+La Educación Sexual Integral (ESI) es un enfoque educativo que busca brindar conocimientos científicos, éticos y afectivos sobre la sexualidad. Está diseñada para que niñas, niños y adolescentes desarrollen habilidades para tomar decisiones informadas, responsables y respetuosas sobre su cuerpo y relaciones.
 
-Tiene como objetivos prevenir/reducir embarazos adolescentes, violencia sexual, uniones tempranas y problemas de salud relacionados.
+Entre sus objetivos destacan:
+- Prevenir embarazos no deseados y enfermedades de transmisión sexual.
+- Fomentar el respeto por la diversidad y los derechos humanos.
+- Promover relaciones equitativas y libres de violencia.
+- Fortalecer la autoestima, el autocuidado y la autoafirmación.
 
-Además, no solo está dirigida a estudiantes, sino también a docentes y familiares, mediante acciones formativas, preventivas y de fortalecimiento de capacidades.
+La ESI no reemplaza lo que se enseña en casa, sino que lo complementa, involucrando también a docentes, familias y comunidades.
         """)
 
     # === SECCIÓN 2 ===
-            elif opcion == "2. Métodos anticonceptivos":
+    elif opcion == "2. Métodos anticonceptivos":
         st.header("📌 Métodos Anticonceptivos")
         st.markdown("Haz clic para conocer más sobre cada método:")
 
         metodos = {
             "🧴 Condón": {
-                "img": "file:///C:/Users/Zuleika/Desktop/Downloads/preservativo.jpg", 
+                "img": "file:///C:/Users/Zuleika/Desktop/Downloads/preservativo.jpg",
                 "desc": "**Condón**\n- Doble protección: embarazo e ITS.\n- Uso externo.\n- Eficacia: masculino 85%, femenino 79%."
             },
             "💊 Pastillas anticonceptivas": {
@@ -128,7 +131,6 @@ Además, no solo está dirigida a estudiantes, sino también a docentes y famili
             with st.expander(metodo):
                 st.image(info["img"], use_column_width=True)
                 st.markdown(info["desc"])
-
 
     # === SECCIÓN 3 ===
     if opcion == "3. Mitos y verdades":
