@@ -89,7 +89,7 @@ Además, no solo está dirigida a estudiantes, sino también a docentes y famili
         """)
 
     # === SECCIÓN 2 ===
-        elif opcion == "2. Métodos anticonceptivos":
+            elif opcion == "2. Métodos anticonceptivos":
         st.header("📌 Métodos Anticonceptivos")
         st.markdown("Haz clic para conocer más sobre cada método:")
 
