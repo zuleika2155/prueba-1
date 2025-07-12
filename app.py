@@ -251,21 +251,21 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                 "icono": "🚩",
                 "titulo": "Identificar las relaciones tóxicas",
                 "contenido": """
-                Control y desconfianza y celos:
-                Si tu pareja necesita saber dónde estás todo el tiempo, se molesta cuando no respondes al instante o te exige atención constante, es posible que el \"cuidado\" o el \"interés\" esconda un deseo de control.
+Control y desconfianza y celos:
+Si tu pareja necesita saber dónde estás todo el tiempo, se molesta cuando no respondes al instante o te exige atención constante, es posible que el \"cuidado\" o el \"interés\" esconda un deseo de control.
 
-                Manipulación emocional:
-                Frases como “si me amaras, lo harías” son formas de chantaje emocional. Cuando se usan los sentimientos para presionar o manejar al otro, hay manipulación.
+Manipulación emocional:
+Frases como “si me amaras, lo harías” son formas de chantaje emocional. Cuando se usan los sentimientos para presionar o manejar al otro, hay manipulación.
 
-                Comunicación tóxica:
-                El sarcasmo, la crítica constante o el uso del silencio para castigar son señales claras. También lo es el gaslighting, que busca hacerte dudar de tu propia percepción o memoria.
+Comunicación tóxica:
+El sarcasmo, la crítica constante o el uso del silencio para castigar son señales claras. También lo es el gaslighting, que busca hacerte dudar de tu propia percepción o memoria.
 
-                Ignorar tus propias necesidades:
-                Cambiar tu comportamiento, vestimenta o incluso tener relaciones sexuales sin ganas solo para evitar conflictos, es una forma de ceder que atenta contra tu bienestar.
+Ignorar tus propias necesidades:
+Cambiar tu comportamiento, vestimenta o incluso tener relaciones sexuales sin ganas solo para evitar conflictos, es una forma de ceder que atenta contra tu bienestar.
 
-                Minimizar tus emociones:
-                Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que sientes. En una relación sana, se validan las emociones, no se ridiculizan.
-                """
+Minimizar tus emociones:
+Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que sientes. En una relación sana, se validan las emociones, no se ridiculizan.
+"""
             }
         ]
 
@@ -280,7 +280,6 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                 """, unsafe_allow_html=True)
 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
-
 
 ### Señales de relaciones tóxicas
 - Control y celos excesivos  
