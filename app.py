@@ -278,43 +278,41 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
             if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
                 if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
                     preguntas = [
-                        "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
-                        "¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
-                        "¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
-                        "¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
-                        "¿Sientes que recurre al chantaje emocional para salirse con la suya?",
-                        "¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
-                        "¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
-                    ]
+                        
+preguntas = [
+    "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
+    "¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
+    "¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
+    "¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
+    "¿Sientes que recurre al chantaje emocional para salirse con la suya?",
+    "¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
+    "¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
+]
 
-                    respuestas_si = 0
-                    for i, pregunta in enumerate(preguntas):
-                        respuesta = st.radio(pregunta, ["Selecciona", "Sí", "No"], key=f"pregunta_{i}")
-                        if respuesta == "Sí":
-                            respuestas_si += 1
+respuestas = []
 
-                    if respuestas_si >= 4:
-                        st.error("🚨 ¡Alerta! Estas respuestas indican señales de una relación tóxica.")
-                        st.markdown("""
-                        ### 😟 Necesitas apoyo
-                        De ser el caso, puedes hablar con un psicólogo, el cual puede ayudarte a encontrar claridad y recuperar tu autoestima. Nadie puede hacerte sentir mal o inferior.
-                        """)
-                    elif respuestas_si == 3:
-                        st.warning("👏 Vas por buen camino, pero hay señales a tener en cuenta.")
-                    elif respuestas_si == 2:
-                        st.info("🤔 ¡Tú puedes! Reflexiona sobre tu bienestar y confianza.")
-                    else:
-                        st.success("💪 ¡Muy bien! Parece que estás en una relación saludable.")
-                else:
-                    st.markdown(f"""
-                    <div class='card'>
-                        <div class='card-icon'>{tarjeta['icono']}</div>
-                        <div class='card-title'>{tarjeta['titulo']}</div>
-                        <div class='card-content'>{tarjeta['contenido']}</div>
-                    </div>
-                    """, safe_allow_html=True)
+for i, pregunta in enumerate(preguntas):
+    respuesta = st.radio(f"{i+1}. {pregunta}", ("No", "Sí"), key=i)
+    respuestas.append(respuesta)
 
-        st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
+if st.button("Evaluar"):
+    respuestas_si = respuestas.count("Sí")
+
+    st.subheader("🧾 Evaluación")
+
+    if respuestas_si >= 4:
+        st.error("⚠️ Podrías estar en una relación tóxica.")
+        st.markdown(
+            "Las relaciones deben ayudarte a crecer, no hacerte sentir menos. "
+            "Si te sentiste identificada/o, valora hablar con alguien de confianza o buscar orientación profesional. "
+            "**Tu bienestar emocional importa.**"
+        )
+    else:
+        st.success("✅ Parece que hay aspectos sanos en tu relación.")
+        st.markdown(
+            "Aun así, es importante estar alerta a cualquier comportamiento que te haga sentir mal contigo o que limite tu bienestar. "
+            "La comunicación y el respeto mutuo son claves."
+        )
 #OPCION 6
     elif opcion == "6. Identidad de género y orientación sexual":
         st.header("🏳️‍🌈 Identidad de género y orientación sexual")
