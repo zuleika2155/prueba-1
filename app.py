@@ -230,12 +230,37 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
 #sección 5
     elif opcion == "5. Relaciones afectivas y vínculos sanos":
         st.header("💞 Relaciones afectivas y vínculos sanos")
-        st.markdown("""
-### Amor, atracción y deseo
-El deseo es atracción física y sexual. La atracción romántica involucra emociones y euforia. El amor es una conexión profunda, emocional, física y espiritual.
 
-### ¿Qué es el amor?
-Es un sentimiento complejo que da plenitud, felicidad y conexión con otros.
+        tarjetas = [
+            {
+                "icono": "❤️‍🔥",
+                "titulo": "¿Qué es el deseo sexual?",
+                "contenido": "El deseo sexual, también conocido como libido o lujuria, es la primera etapa del amor en pareja. Se caracteriza por una fuerte atracción física y el interés en mantener relaciones sexuales. Esta fase está impulsada por las hormonas sexuales: la testosterona y los estrógenos. Este tipo de amor se manifiesta cuando la relación gira principalmente en torno al deseo sexual, ya sea a través de la actividad física, fantasías sexuales o la tensión que se siente al estar cerca de la otra persona."
+            },
+            {
+                "icono": "💖",
+                "titulo": "¿Qué es la atracción romántica?",
+                "contenido": "La segunda fase del amor de pareja es la atracción romántica o el enamoramiento, y está dominada por tres sustancias clave: la dopamina, la norepinefrina y la serotonina. La dopamina, producida por el hipotálamo en el cerebro, se libera cuando realizamos actividades placenteras. Durante el enamoramiento, los niveles de dopamina se elevan significativamente, junto con la norepinefrina.  Estas dos hormonas generan sensaciones de euforia, entusiasmo, energía, y pueden causar una disminución del apetito y del sueño."
+            },
+            {
+                "icono": "❤️",
+                "titulo": "¿Qué es el amor?",
+                "contenido": " Si nos preguntas qué es el amor, nosotros lo describimos como un sentimiento profundo y complejo que se experimenta hacia otra persona, uno mismo o algo que nos apasiona. Además, te diríamos que el amor implica una conexión emocional, física y espiritual que nos hace sentir felices, plenos y realizados."
+            }
+        ]
+
+        for tarjeta in tarjetas:
+            if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
+                st.markdown(f"""
+                <div class='card'>
+                    <div class='card-icon'>{tarjeta['icono']}</div>
+                    <div class='card-title'>{tarjeta['titulo']}</div>
+                    <div class='card-content'>{tarjeta['contenido']}</div>
+                </div>
+                """, unsafe_allow_html=True)
+
+        st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
+
 
 ### Señales de relaciones tóxicas
 - Control y celos excesivos  
