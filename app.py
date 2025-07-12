@@ -89,13 +89,13 @@ Además, no solo está dirigida a estudiantes, sino también a docentes y famili
         """)
 
     # === SECCIÓN 2 ===
-    elif opcion == "2. Métodos anticonceptivos":
+        elif opcion == "2. Métodos anticonceptivos":
         st.header("📌 Métodos Anticonceptivos")
         st.markdown("Haz clic para conocer más sobre cada método:")
 
         metodos = {
             "🧴 Condón": {
-                "img": "https://www.salud.mapfre.es/media/2021/04/condon.jpg",
+                "img": "file:///C:/Users/Zuleika/Desktop/Downloads/preservativo.jpg", 
                 "desc": "**Condón**\n- Doble protección: embarazo e ITS.\n- Uso externo.\n- Eficacia: masculino 85%, femenino 79%."
             },
             "💊 Pastillas anticonceptivas": {
@@ -128,6 +128,7 @@ Además, no solo está dirigida a estudiantes, sino también a docentes y famili
             with st.expander(metodo):
                 st.image(info["img"], use_column_width=True)
                 st.markdown(info["desc"])
+
 
     # === SECCIÓN 3 ===
     if opcion == "3. Mitos y verdades":
