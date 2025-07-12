@@ -314,3 +314,4 @@ Habla con alguien de confianza o con un/a profesional. Mereces una relación bas
 """)
             else:
                 st.markdown(f"**{tarjeta['icono']} {tarjeta['titulo']}**\n\n{tarjeta['contenido']}")
+
