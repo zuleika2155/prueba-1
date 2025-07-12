@@ -311,33 +311,5 @@ if st.button("Evaluar"):
             "Aun así, es importante estar alerta a cualquier comportamiento que te haga sentir mal contigo o que limite tu bienestar. "
             "La comunicación y el respeto mutuo son claves."
         )
-#OPCION 6
-    elif opcion == "6. Identidad de género y orientación sexual":
-        st.header("🏳️‍🌈 Identidad de género y orientación sexual")
-        st.markdown("""
-### Sexo
-Asignado al nacer por características físicas y cromosómicas.
 
-### Género
-Es una construcción social, cultural y legal sobre los roles esperados.
-
-### Identidad de género
-Cómo te identificas y expresas tu género (ropa, lenguaje, conducta). Puede o no coincidir con tu sexo asignado.
-
-### Orientación sexual
-Es la atracción emocional, afectiva o sexual hacia otras personas. Puede ser homosexual, bisexual, asexual, entre otras.
-""")
-    # === SECCIÓN FEEDBACK ===
-st.markdown("## 🙋‍♀️ Califícanos")
-experiencia = st.selectbox("¿Te gustó la experiencia en ESInformación?", ["", "⭐ Muy mala", "⭐⭐ Mala", "⭐⭐⭐ Regular", "⭐⭐⭐⭐ Buena", "⭐⭐⭐⭐⭐ Excelente"])
-if experiencia:
-    st.success("¡Gracias por tu calificación!")
-
-# Pie de página
-st.markdown("""
-<hr>
-<div style='text-align:center;'>
-Gracias por usar <b>ESInformación</b> 💜
-</div>
-""", unsafe_allow_html=True)
 
