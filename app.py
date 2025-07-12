@@ -308,9 +308,9 @@ Habla con alguien de confianza o con un/a profesional. Mereces una relación bas
             else:
                 st.markdown(f"**{tarjeta['icono']} {tarjeta['titulo']}**\n\n{tarjeta['contenido']}")
                 #OPCION 6
-elif opcion == "6. Identidad de género y orientación sexual":
-    st.header("🌈 Identidad de género y orientación sexual")
-    st.write("Conoce los conceptos fundamentales para comprender la diversidad sexual y de género de manera respetuosa.")
+    if opcion == "6. Identidad de género y orientación sexual":
+        st.header("🌈 Identidad de género y orientación sexual")
+        st.write("Conoce los conceptos fundamentales para comprender la diversidad sexual y de género de manera respetuosa.")
 
     # Diseño por columnas
     col1, col2 = st.columns(2)
