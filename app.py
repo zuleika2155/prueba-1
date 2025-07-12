@@ -105,8 +105,12 @@ Es el único método que brinda doble protección, ya que previene tanto un emba
 EFICACIA: El condón masulino tiene una eficacia de 85% para prevenir embarazos no deseados y 95% para prevenir ITS. El condón femenino tiene una eficacia del 79% en su uso común."""
             },
             "💊 Pastillas anticonceptivas": {
-                "img": "https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg",
-                "desc": "**Pastillas anticonceptivas**\n- Uso diario.\n- 99.7% eficacia.\n- Requiere control médico."
+                "img": "https://images.unsplash.com/photo-1576065435202-e0a7979b93e3?q=80&w=1117&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "desc": """**Pastillas anticonceptivas**
+Método hormonal que inhibe la ovulación y espesa el moco cervical, dificultando el paso de los espermatozoides. Las píldoras combinadas de estrógenos y progestágenos deben tomarse diariamente a la misma hora. Uso: Diariamente a la misma hora.
+
+Eficacia: 99,7 % si se usa correctamente. También protege contra el cáncer de ovario y endometrio."""
+
             },
             "💉 Inyecciones": {
                 "img": "https://cdn.pixabay.com/photo/2020/05/19/19/39/syringe-5193891_1280.jpg",
