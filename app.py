@@ -278,38 +278,29 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
             if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
                 if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
                     preguntas = [
-    "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
-    "¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
-    "¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
-    "¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
-    "¿Sientes que recurre al chantaje emocional para salirse con la suya?",
-    "¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
-    "¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
+    "1. ¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
+    "2. ¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
+    "3. ¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
+    "4. ¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
+    "5. ¿Sientes que recurre al chantaje emocional para salirse con la suya?",
+    "6. ¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
+    "7. ¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
 ]
 
-respuestas = []
+for pregunta in preguntas:
+    st.markdown(f"- {pregunta}")
 
-for i, pregunta in enumerate(preguntas):
-    respuesta = st.radio(f"{i+1}. {pregunta}", ("No", "Sí"), key=i)
-    respuestas.append(respuesta)
+if st.button("Mostrar mensaje"):
+    st.subheader("💡 Reflexión")
+    st.markdown("""
+    Si al leer estas preguntas sentiste incomodidad, o te identificaste con varias situaciones, es importante que prestes atención a tu relación.
+    
+    En una relación saludable:
+    - Se respeta tu individualidad.
+    - Tus emociones son validadas, no ridiculizadas.
+    - No se recurre al control ni al chantaje.
+    - Puedes crecer, desarrollarte y sentirte segura/o.
 
-if st.button("Evaluar"):
-    respuestas_si = respuestas.count("Sí")
-
-    st.subheader("🧾 Evaluación")
-
-    if respuestas_si >= 4:
-        st.error("⚠️ Podrías estar en una relación tóxica.")
-        st.markdown(
-            "Las relaciones deben ayudarte a crecer, no hacerte sentir menos. "
-            "Si te sentiste identificada/o, valora hablar con alguien de confianza o buscar orientación profesional. "
-            "**Tu bienestar emocional importa.**"
-        )
-    else:
-        st.success("✅ Parece que hay aspectos sanos en tu relación.")
-        st.markdown(
-            "Aun así, es importante estar alerta a cualquier comportamiento que te haga sentir mal contigo o que limite tu bienestar. "
-            "La comunicación y el respeto mutuo son claves."
-        )
-
+    Si algo no te hace bien, no estás exagerando. Tu bienestar emocional es lo más importante. Hablar con alguien de confianza o con un/a profesional puede ayudarte a ver las cosas con más claridad.
+    """)
 
