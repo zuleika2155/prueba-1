@@ -356,7 +356,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
         with col4:
             st.subheader("💘 Orientación sexual")
             st.image(
-                "https://images.unsplash.com/photo-1717700191408-35bb236d2cae?q=80&w=1183&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D,
+                "https://images.unsplash.com/photo-1717700191408-35bb236d2cae?q=80&w=1183&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 caption="A quién te atrae"
             )
             st.write(
