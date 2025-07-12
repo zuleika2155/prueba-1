@@ -287,21 +287,21 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                         "¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
                     ]
 
-                    respuestas_negativas = 0
+                    respuestas_si = 0
                     for i, pregunta in enumerate(preguntas):
                         respuesta = st.radio(pregunta, ["Selecciona", "Sí", "No"], key=f"pregunta_{i}")
-                        if respuesta == "No":
-                            respuestas_negativas += 1
+                        if respuesta == "Sí":
+                            respuestas_si += 1
 
-                    if respuestas_negativas >= 4:
+                    if respuestas_si >= 4:
                         st.error("🚨 ¡Alerta! Estas respuestas indican señales de una relación tóxica.")
                         st.markdown("""
                         ### 😟 Necesitas apoyo
                         De ser el caso, puedes hablar con un psicólogo, el cual puede ayudarte a encontrar claridad y recuperar tu autoestima. Nadie puede hacerte sentir mal o inferior.
                         """)
-                    elif respuestas_negativas == 3:
+                    elif respuestas_si == 3:
                         st.warning("👏 Vas por buen camino, pero hay señales a tener en cuenta.")
-                    elif respuestas_negativas == 2:
+                    elif respuestas_si == 2:
                         st.info("🤔 ¡Tú puedes! Reflexiona sobre tu bienestar y confianza.")
                     else:
                         st.success("💪 ¡Muy bien! Parece que estás en una relación saludable.")
@@ -315,9 +315,6 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                     """, unsafe_allow_html=True)
 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
-
-
-
 #OPCION 6
     elif opcion == "6. Identidad de género y orientación sexual":
         st.header("🏳️‍🌈 Identidad de género y orientación sexual")
