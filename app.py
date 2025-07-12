@@ -177,7 +177,7 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                     st.error("❌ Incorrecto")
                 st.info(exp)
                 st.markdown("---")
-
+                
         if aciertos == 4:
             st.balloons()
             st.markdown(f"<h2 style='text-align: center; color: green;'>🎉 ¡Excelente, {nombre}! Respondiste todas correctamente. ¡Sigue así! 🎉</h2>", unsafe_allow_html=True)
@@ -189,23 +189,34 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
             st.markdown(f"<h3 style='text-align: center;'>💪 No te desanimes, {nombre}. ¡Sigue aprendiendo y mejorando!</h3>", unsafe_allow_html=True)
 
 
-    #SECCIÓN 4
     elif opcion == "4. Autocuidado digital y sexting":
         st.header("📱 Autocuidado Digital y Sexting")
-        st.markdown("""
-### Consentimiento - Sexting
-El sexting es el intercambio de imágenes o videos de contenido sexual mediante mensajes o redes. Puede ser riesgoso, especialmente en menores, y derivar en abuso sexual. No es aceptable si no hay consentimiento. Presionar a alguien a enviar fotos íntimas es ilegal.
 
-### Cómo evitar la difusión de contenido íntimo
-La difusión sin autorización de material íntimo viola el derecho a la privacidad, libertad de expresión y derechos sexuales. Evalúa bien a quién se lo compartes. Si recibes contenido sin consentimiento, elimínalo.
+        with st.expander("🔐 ¿Qué es el sexting?"):
+            st.markdown("""
+            El sexting es el intercambio de imágenes o videos de contenido sexual mediante mensajes o redes. Puede ser riesgoso, especialmente en menores, y derivar en abuso sexual. No es aceptable si no hay consentimiento. Presionar a alguien a enviar fotos íntimas es ilegal.
+            """)
 
-### Responsabilidad ante estas acciones
-Difundir material íntimo puede ser penado con hasta 6 años de prisión. Además, pueden sumarse sanciones económicas.
+        with st.expander("📤 Cómo evitar la difusión de contenido íntimo"):
+            st.markdown("""
+            La difusión sin autorización de material íntimo viola el derecho a la privacidad, libertad de expresión y derechos sexuales. Evalúa bien a quién se lo compartes. Si recibes contenido sin consentimiento, elimínalo.
+            """)
 
-### Recursos y ayuda
-Puedes denunciar con pruebas en la División de Delitos de Alta Tecnología de la Policía Nacional. Llama gratis al 1818 o al (01) 431-8898, o escribe a divindat.depcpi@policia.gob.pe.
-""")
+        with st.expander("⚖️ Responsabilidad legal"):
+            st.markdown("""
+            Difundir material íntimo puede ser penado con hasta 6 años de prisión. Además, pueden sumarse sanciones económicas.
+            """)
 
+        with st.expander("📞 ¿Dónde pedir ayuda?"):
+            st.markdown("""
+            Puedes denunciar con pruebas en la División de Delitos de Alta Tecnología de la Policía Nacional. 
+            - Llama gratis al 1818 o al (01) 431-8898
+            - Escribe a divindat.depcpi@policia.gob.pe
+            """)
+
+        st.success("Explora cada sección para estar más segurx en tu vida digital ✨")
+ 
+#sección 5
     elif opcion == "5. Relaciones afectivas y vínculos sanos":
         st.header("💞 Relaciones afectivas y vínculos sanos")
         st.markdown("""
