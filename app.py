@@ -228,7 +228,7 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
         st.success("Haz clic en cada botón para explorar la información de forma interactiva ✨")
 
 #sección 5
-    elif opcion == "5. Relaciones afectivas y vínculos sanos":
+elif opcion == "5. Relaciones afectivas y vínculos sanos":
     st.header("💞 Relaciones afectivas y vínculos sanos")
 
     tarjetas = [
