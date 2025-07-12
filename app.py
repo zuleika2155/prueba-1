@@ -288,16 +288,6 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                     "6. ¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
                     "7. ¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
                 ]
-
-                for pregunta in preguntas:
-                    st.markdown(f"- {pregunta}")
-
-                if "mostrar_mensaje" not in st.session_state:
-                    st.session_state.mostrar_mensaje = False
-
-                if st.button("Mostrar mensaje de reflexión"):
-                    st.session_state.mostrar_mensaje = True
-
                 if st.session_state.mostrar_mensaje:
                     st.subheader("💡 Reflexión")
                     st.markdown("""
