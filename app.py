@@ -308,40 +308,38 @@ Habla con alguien de confianza o con un/a profesional. Mereces una relación bas
             else:
                 st.markdown(f"**{tarjeta['icono']} {tarjeta['titulo']}**\n\n{tarjeta['contenido']}")
                 #OPCION 6
-    if opcion == "6. Identidad de género y orientación sexual":
-        st.header("🌈 Identidad de género y orientación sexual")
+elif opcion == "6. Identidad de género y orientación sexual":
+    st.header("🌈 Identidad de género y orientación sexual")
+    with st.expander("Explora los conceptos clave", expanded=True):
         st.write("Conoce los conceptos fundamentales para comprender la diversidad sexual y de género de manera respetuosa.")
 
-    # Diseño por columnas
-    col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.subheader("🧬 Sexo")
+            st.image("https://images.unsplash.com/photo-1575302144068-7c17243fe6b2?auto=format&fit=crop&w=400&q=80", caption="El sexo se asigna al nacer")
+            st.write("Es la etiqueta que se nos asigna al nacer, generalmente por un doctor, basándose en nuestros genitales y cromosomas. Se registra en el certificado de nacimiento como “masculino” o “femenino”. [Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)")
 
-    with col1:
-        st.subheader("🧬 Sexo")
-        st.image("https://images.unsplash.com/photo-1575302144068-7c17243fe6b2?auto=format&fit=crop&w=400&q=80", caption="El sexo se asigna al nacer")
-        st.write("Es la etiqueta que se nos asigna al nacer, generalmente por un doctor, basándose en nuestros genitales y cromosomas. Se registra en el certificado de nacimiento como “masculino” o “femenino”.")
+        with col2:
+            st.subheader("🟣 Género")
+            st.image("https://images.unsplash.com/photo-1601572142064-6e20e3ac9b87?auto=format&fit=crop&w=400&q=80", caption="El género es una construcción social")
+            st.write("Es una construcción legal, social y cultural que establece normas, expectativas y roles sobre cómo deben comportarse las personas según su sexo asignado. [Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)")
 
-    with col2:
-        st.subheader("🟣 Género")
-        st.image("https://images.unsplash.com/photo-1601572142064-6e20e3ac9b87?auto=format&fit=crop&w=400&q=80", caption="El género es una construcción social")
-        st.write("Es una construcción legal, social y cultural que establece normas, expectativas y roles sobre cómo deben comportarse las personas según su sexo asignado.")
+        st.divider()
 
-    st.divider()
+        col3, col4 = st.columns(2)
+        with col3:
+            st.subheader("🧠 Identidad de género")
+            st.image("https://images.unsplash.com/photo-1603791452906-c1f1b7c5f103?auto=format&fit=crop&w=400&q=80", caption="Cómo te sientes contigo")
+            st.write("""Es cómo cada persona se siente y se percibe a sí misma en relación con el género. No está determinada por el cuerpo, sino por una experiencia interna y única. 
+Se expresa con la ropa, la voz, el lenguaje corporal y puede o no coincidir con el sexo asignado. 
+[Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)""")
 
-    col3, col4 = st.columns(2)
-
-    with col3:
-        st.subheader("🧠 Identidad de género")
-        st.image("https://images.unsplash.com/photo-1603791452906-c1f1b7c5f103?auto=format&fit=crop&w=400&q=80", caption="Cómo te sientes contigo")
-        st.write("""Es cómo cada persona se siente y se percibe a sí misma en relación con el género. 
-No está determinada por el cuerpo, sino por una experiencia interna y única. 
-Se expresa con la ropa, la voz, el lenguaje corporal y puede o no coincidir con el sexo asignado.""")
-
-    with col4:
-        st.subheader("💘 Orientación sexual")
-        st.image("https://images.unsplash.com/photo-1520975918311-2685a7982052?auto=format&fit=crop&w=400&q=80", caption="A quién te atrae")
-        st.write("""Es la atracción emocional, romántica, sexual o afectiva hacia otras personas. 
+        with col4:
+            st.subheader("💘 Orientación sexual")
+            st.image("https://images.unsplash.com/photo-1520975918311-2685a7982052?auto=format&fit=crop&w=400&q=80", caption="A quién te atrae")
+            st.write("""Es la atracción emocional, romántica, sexual o afectiva hacia otras personas. 
 Se diferencia del sexo biológico o de la identidad de género.
-Entre las más comunes: homosexualidad, bisexualidad, asexualidad.""")
+Entre las más comunes: homosexualidad, bisexualidad, asexualidad.
+[Fuente](https://www.plannedparenthood.org/es/temas-de-salud/identidad-de-genero/sexo-e-identidad-de-genero)""")
 
-    st.divider()
-    st.success("✨ Recordatorio: Todas las formas de identidad y orientación son válidas. Lo importante es vivir con autenticidad y respeto.")
+        st.success("✨ Todas las formas de identidad y orientación son válidas. ¡Vive con autenticidad y respeto!")
