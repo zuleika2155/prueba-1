@@ -350,6 +350,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
             st.write(
                 "Es cómo cada persona se siente y se percibe a sí misma en relación con el género. "
                 "No está determinada por el cuerpo, sino por una experiencia interna y única. "
+                "Esta identidad comienza a desarrollarse desde edades tempranas y forma parte central del sentido del yo."
                 "Se expresa con la ropa, la voz, el lenguaje corporal y puede o no coincidir con el sexo asignado. "
             )
 
@@ -360,8 +361,8 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                 caption="A quién te atrae"
             )
             st.write(
-                "Es la atracción emocional, romántica, sexual o afectiva hacia otras personas. "
-                "Se diferencia del sexo biológico o de la identidad de género. "
+                "La orientación sexual es una atracción emocional, romántica, sexual o afectiva duradera hacia otros. "
+                "Se distingue fácilmente de otros componentes de la sexualidad que incluyen sexo biológico, identidad sexual (el sentido psicológico de ser hombre o mujer) y el rol social del sexo (respeto de las normas culturales de conducta femenina y masculina). "
                 "Entre las más comunes: homosexualidad, bisexualidad, asexualidad. "
             )
 
