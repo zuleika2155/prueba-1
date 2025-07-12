@@ -160,11 +160,10 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
     if opcion == "3. Mitos y verdades":
         st.header("🎮 ¿Mito o Verdad?")
         preguntas = [
-            ("La educación sexual en la escuela interfiere con lo que enseñan en casa.", "mito", "La ESI complementa lo aprendido en familia."),
-            ("Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales.", "mito", "La ESI retrasa el inicio sexual."),
-            ("La ESI enseña sobre identidad de género sin imponer orientación.", "verdad", "La ESI enseña a no discriminar y valorar la diversidad."),
-            ("Los anticonceptivos afectan permanentemente la fertilidad.", "mito", "La mayoría son reversibles si se usan correctamente."),
-            ("El respeto y consentimiento son claves para toda relación.", "verdad", "Sin consentimiento no hay respeto ni salud sexual.")
+            ("La educación sexual en la escuela interfiere con lo que enseñan en casa.", "mito", "La educación sexual integral no interfiere con la educación previa que nuestros padres y madres nos ofrecen, sino que por el contrario, la labor de padres y profesores se complementa para asegurar una formación integral. ),
+            ("Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales a temprana edad.", "mito", "Está demostrado que la ESI retrasa el inicio sexual y mejora la toma de decisiones, además ayuda a crecer en conocimiento y valores para vivir la sexualidad con bienestar."),
+            ("Hay adultos quienes no tuvieron previa enseñanza sobre la sexualidad, aprendieron solos y les fue bien.", "mito", "Estas son personas que no tuvieron la oportunidad de recibir información integral en la escuela, ello ha generado diversas dudas que les impide disfrutar su sexualidad plenamente. Por ello es importante hablar sobre la ESI."),
+            ("La ESI habla sobre identidad de género u orientación sexual en la escuela, sin determinar la sexualidad de las personas.", "verdad", "Verdad, pues enseña a no discriminar y a valorar la diversidad que hay a nuestro alrededor."),
         ]
         aciertos = 0
         for i, (preg, correcta, exp) in enumerate(preguntas):
@@ -179,11 +178,18 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                 st.info(exp)
                 st.markdown("---")
 
-        if aciertos >= 3:
+        if aciertos == 4:
             st.balloons()
-            st.success(f"🎉 ¡Felicidades {nombre}! Acertaste {aciertos} de 5 preguntas.")
+            st.markdown(f"<h2 style='text-align: center; color: green;'>🎉 ¡Excelente, {nombre}! Respondiste todas correctamente. ¡Sigue así! 🎉</h2>", unsafe_allow_html=True)
+        elif aciertos == 3:
+            st.markdown(f"<h2 style='text-align: center;'>👏 ¡Muy bien, {nombre}! Aciertos: 3 de 4. Vas por buen camino.</h2>", unsafe_allow_html=True)
+        elif aciertos == 2:
+            st.markdown(f"<h3 style='text-align: center;'>🙂 ¡Tú puedes! Acertaste 2, sigue practicando.</h3>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<h3 style='text-align: center;'>💪 No te desanimes, {nombre}. ¡Sigue aprendiendo y mejorando!</h3>", unsafe_allow_html=True)
 
-    # Puedes mantener tus secciones 4, 5 y 6 igual
+
+    #SECCIÓN 4
     elif opcion == "4. Autocuidado digital y sexting":
         st.header("📱 Autocuidado Digital y Sexting")
         st.markdown("""
