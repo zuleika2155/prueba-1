@@ -311,9 +311,8 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
 
 #OPCION 6
     elif opcion == "6. Identidad de género y orientación sexual":
-    st.header("🌈 Identidad de género y orientación sexual")
-    
-    with st.expander("Explora los conceptos clave", expanded=True):
+        st.header("🌈 Identidad de género y orientación sexual")
+        with st.expander("Explora los conceptos clave", expanded=True):
         st.write("Conoce los conceptos fundamentales para comprender la diversidad sexual y de género de manera respetuosa.")
 
         col1, col2 = st.columns(2)
