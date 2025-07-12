@@ -192,30 +192,41 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
     elif opcion == "4. Autocuidado digital y sexting":
         st.header("📱 Autocuidado Digital y Sexting")
 
-        with st.expander("🔐 ¿Qué es el sexting?"):
-            st.markdown("""
-            El sexting es el intercambio de imágenes o videos de contenido sexual mediante mensajes o redes. Puede ser riesgoso, especialmente en menores, y derivar en abuso sexual. No es aceptable si no hay consentimiento. Presionar a alguien a enviar fotos íntimas es ilegal.
-            """)
+        cards = [
+            {
+                "titulo": "🔐 ¿Qué es el sexting?",
+                "contenido": """
+                El sexting es el intercambio de imágenes o videos de contenido sexual mediante mensajes o redes. Puede ser riesgoso, especialmente en menores, y derivar en abuso sexual. No es aceptable si no hay consentimiento. Presionar a alguien a enviar fotos íntimas es ilegal.
+                """
+            },
+            {
+                "titulo": "📤 Cómo evitar la difusión de contenido íntimo",
+                "contenido": """
+                La difusión sin autorización de material íntimo viola el derecho a la privacidad, libertad de expresión y derechos sexuales. Evalúa bien a quién se lo compartes. Si recibes contenido sin consentimiento, elimínalo.
+                """
+            },
+            {
+                "titulo": "⚖️ Responsabilidad legal",
+                "contenido": """
+                Difundir material íntimo puede ser penado con hasta 6 años de prisión. Además, pueden sumarse sanciones económicas.
+                """
+            },
+            {
+                "titulo": "📞 ¿Dónde pedir ayuda?",
+                "contenido": """
+                Puedes denunciar con pruebas en la División de Delitos de Alta Tecnología de la Policía Nacional.
+                - Llama gratis al 1818 o al (01) 431-8898
+                - Escribe a divindat.depcpi@policia.gob.pe
+                """
+            },
+        ]
 
-        with st.expander("📤 Cómo evitar la difusión de contenido íntimo"):
-            st.markdown("""
-            La difusión sin autorización de material íntimo viola el derecho a la privacidad, libertad de expresión y derechos sexuales. Evalúa bien a quién se lo compartes. Si recibes contenido sin consentimiento, elimínalo.
-            """)
+        for card in cards:
+            if st.button(card["titulo"]):
+                st.markdown(f"<div class='card'><h4>{card['titulo']}</h4><p>{card['contenido']}</p></div>", unsafe_allow_html=True)
 
-        with st.expander("⚖️ Responsabilidad legal"):
-            st.markdown("""
-            Difundir material íntimo puede ser penado con hasta 6 años de prisión. Además, pueden sumarse sanciones económicas.
-            """)
+        st.success("Haz clic en cada botón para explorar la información de forma interactiva ✨")
 
-        with st.expander("📞 ¿Dónde pedir ayuda?"):
-            st.markdown("""
-            Puedes denunciar con pruebas en la División de Delitos de Alta Tecnología de la Policía Nacional. 
-            - Llama gratis al 1818 o al (01) 431-8898
-            - Escribe a divindat.depcpi@policia.gob.pe
-            """)
-
-        st.success("Explora cada sección para estar más segurx en tu vida digital ✨")
- 
 #sección 5
     elif opcion == "5. Relaciones afectivas y vínculos sanos":
         st.header("💞 Relaciones afectivas y vínculos sanos")
