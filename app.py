@@ -228,7 +228,7 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
         st.success("Haz clic en cada botón para explorar la información de forma interactiva ✨")
 
 #sección 5
-    if opcion == "5. Relaciones afectivas y vínculos sanos":
+    elif opcion == "5. Relaciones afectivas y vínculos sanos":
         st.header("💞 Relaciones afectivas y vínculos sanos")
 
     tarjetas = [
@@ -311,7 +311,7 @@ Habla con alguien de confianza o con un/a profesional. Mereces una relación bas
 
 
 #OPCION 6
-elif opcion == "6. Identidad de género y orientación sexual":
+    elif opcion == "6. Identidad de género y orientación sexual":
     st.header("🌈 Identidad de género y orientación sexual")
     
     with st.expander("Explora los conceptos clave", expanded=True):
