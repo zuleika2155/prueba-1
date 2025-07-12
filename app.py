@@ -45,6 +45,11 @@ st.markdown('<div class="titulo">🌈 ¡Bienvenidx a <i>ESInformación</i>! 🧠
 st.markdown('<div class="subtitulo">Un espacio seguro para aprender sobre Educación Sexual Integral (ESI)</div>', unsafe_allow_html=True)
 
 # Presentación
+st.image(
+    "https://plus.unsplash.com/premium_vector-1682306944260-73daeebad9d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    caption="La ESI promueve respeto, diversidad y autocuidado",
+    use_column_width=True
+)
 st.write("""
 La Educación Sexual Integral busca brindar a los estudiantes información confiable sobre su cuerpo, la sexualidad y la afectividad, para que puedan tomar decisiones libres y responsables.
 
