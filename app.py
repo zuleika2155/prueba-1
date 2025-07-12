@@ -289,7 +289,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
 
                     respuestas_negativas = 0
                     for i, pregunta in enumerate(preguntas):
-                        respuesta = st.radio(pregunta, ["Sí", "No"], key=f"pregunta_{i}")
+                        respuesta = st.radio(pregunta, ["Selecciona", "Sí", "No"], key=f"pregunta_{i}")
                         if respuesta == "No":
                             respuestas_negativas += 1
 
@@ -315,6 +315,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                     """, unsafe_allow_html=True)
 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
+
 
 
 #OPCION 6
