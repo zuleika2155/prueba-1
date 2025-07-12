@@ -312,7 +312,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                         <div class='card-title'>{tarjeta['titulo']}</div>
                         <div class='card-content'>{tarjeta['contenido']}</div>
                     </div>
-                    """, unsafe_allow_html=True)
+                    """, safe_allow_html=True)
 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
 #OPCION 6
