@@ -99,7 +99,10 @@ La ESI no reemplaza lo que se enseña en casa, sino que lo complementa, involucr
         metodos = {
             "🧴 Condón": {
                 "img": "https://images.unsplash.com/photo-1575997803451-f0752869e498?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                "desc": "**Condón**\n- Doble protección: embarazo e ITS.\n- Uso externo.\n- Eficacia: masculino 85%, femenino 79%."
+                "desc": """**Condón**
+Es el único método que brinda doble protección, ya que previene tanto un embarazo no planificado como las infecciones de transmisión sexual (ITS), incluyendo el VIH. Se debe colocar antes del acto scual.
+
+EFICACIA: El condón masulino tiene una eficacia de 85% para prevenir embarazos no deseados y 95% para prevenir ITS. El condón femenino tiene una eficacia del 79% en su uso común."""
             },
             "💊 Pastillas anticonceptivas": {
                 "img": "https://cdn.pixabay.com/photo/2018/04/24/16/58/pill-3348198_960_720.jpg",
