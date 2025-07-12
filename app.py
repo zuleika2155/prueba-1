@@ -282,7 +282,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
 
     elif opcion == "7. ¿Estoy en una relación tóxica?":
-            st.header("🔍 ¿Estoy en una relación tóxica?")
+        st.header("🔍 ¿Estoy en una relación tóxica?")
 
         preguntas = [
             "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
@@ -313,6 +313,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
             st.info("🤔 ¡Tú puedes! Reflexiona sobre tu bienestar y confianza.")
         else:
             st.success("💪 ¡Muy bien! Parece que estás en una relación saludable.")
+
 #OPCION 6
     elif opcion == "6. Identidad de género y orientación sexual":
         st.header("🏳️‍🌈 Identidad de género y orientación sexual")
