@@ -98,7 +98,7 @@ La ESI no reemplaza lo que se enseña en casa, sino que lo complementa, involucr
 
         metodos = {
             "🧴 Condón": {
-                "img": "file:///C:/Users/Zuleika/Desktop/Downloads/preservativo.jpg",
+                "img": "https://images.unsplash.com/photo-1575997803451-f0752869e498?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 "desc": "**Condón**\n- Doble protección: embarazo e ITS.\n- Uso externo.\n- Eficacia: masculino 85%, femenino 79%."
             },
             "💊 Pastillas anticonceptivas": {
