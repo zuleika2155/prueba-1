@@ -116,24 +116,38 @@ Eficacia: 99,7 % si se usa correctamente. También protege contra el cáncer de 
                 "img": "https://images.unsplash.com/photo-1609009630912-f16dcf3e03a6?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 "desc": """**Inyecciones**
 Actúan como deteniendo la ovulación y espesan el moco cervical, además que bloquean el paso de los espermatozoides hacia el útero. Puede hacerlo durante ciertos meses, por ejemplo inyectable mensual, te protege todo un mes, además del trimestre que es por tres meses.
+
 Tiene una eficacia de manera mensual de 99.5% y trimestral de 99.7%"""
 
             },
             "📍 Implante subdérmico": {
-                "img": "https://www.nexplanonusa.com/assets/images/nx_diagram_2.png",
-                "desc": "**Implante subdérmico**\n- Dura hasta 3 años.\n- 99.95% eficaz."
+                "img": "https://enfamilia.aeped.es/sites/enfamilia.aeped.es/files/images/articulos/implante2.jpg",
+                "desc": """**Implante subdérmico**
+Es una pequeña varilla flexible colocada debajo de la piel del brazo, libera progestágeno de manera seguida para prevenir el embarazo. Puede proteger hasta por 3 años 
+
+Su eficacia es de 99.95%. Puede causar alteraciones menstruales, pero no interfiere con el acto sexual."""
             },
-            "⚙️ SIU Hormonal": {
-                "img": "https://www.healthychildren.org/SiteCollectionImagesArticleImages/IUD.jpg",
-                "desc": "**SIU Hormonal**\n- Dispositivo en útero con hormonas.\n- Dura hasta 5 años."
+            "⚙️ Sistema Intrauterino de Levonorgestrel - SIU-LING": {
+                "img": "https://images.unsplash.com/photo-1715111641899-b0118be16660?q=80&w=1108&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "desc": """**SIU Hormonal**
+Es un dispositivo pequeño que se inserta en el utero y liberta hormonas, puede proteger hasta por 5 años y es colocado por un profesional.
+
+Tiene un 99.5% de eficacia."""
             },
-            "🧲 DIU de cobre": {
-                "img": "https://www.plannedparenthood.org/uploads/filer_public_thumbnails/filer_public/55/40/554029cd-066e-4d9e-873d-bc35283f9628/iud_illustration.jpg__800x600_q85_crop_subsampling-2.jpg",
-                "desc": "**DIU de cobre**\n- Sin hormonas.\n- Dura hasta 12 años.\n- 99.4% eficaz."
+            "🧲 Dispositivo intrauterino - DIU de cobre": {
+                "img": "https://images.unsplash.com/photo-1576070932889-43995345c9b6?q=80&w=1077&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "desc": """**DIU de cobre**
+Pequeño dispositivo recubierto con cobre, que se coloca en el utero para evitar la fertilización, tiene una protección por 12 años y también es colocado por un profesional
+
+Eficacia de 99.4%. No interfiere con el acto sexual"""
             },
-            "🚨 AOE": {
-                "img": "https://cdn.pixabay.com/photo/2017/08/06/12/39/contraceptive-2595580_1280.jpg",
-                "desc": "**AOE (pastilla de emergencia)**\n- Solo en emergencias.\n- Hasta 72h después del acto sexual."
+            "🚨 Anticonceptivo Oral de Emergencia - AOE": {
+                "img": "https://images.unsplash.com/photo-1576069445378-ddc40a383222?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "desc": """**AOE (pastilla de emergencia)**
+Utilizado solo en situaciones de emergencia, como relaciones sin protección o violencia sexual, puede durar hasta 72 horas despúes del actos sexual.
+
+Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. No sustituye al uso regular de otros métodos."""
+
             }
         }
 
