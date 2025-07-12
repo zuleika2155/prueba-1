@@ -66,7 +66,7 @@ if nombre and edad:
 st.markdown("<div class='subtitulo'>¿Qué te gustaría conocer en <i>ESInformación</i>?</div>", unsafe_allow_html=True)
 
 with st.container():
-    with st.expander("Haz clic para explorar los temas disponibles", expanded=True):
+    with st.expander("Haz clic para explorar los temas disponibles. Diviérte con el apartado que hemos ido creando para ti ✨", expanded=True):
         opcion = st.selectbox("", [
             "Selecciona una opción",
             "1. ¿Qué es la ESI?",
@@ -367,3 +367,26 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
             )
 
         st.success("✨ Todas las formas de identidad y orientación son válidas. ¡Vive con autenticidad y respeto!")
+
+
+
+
+st.markdown("---")
+st.header("📊 Evalúa tu experiencia")
+
+# 1️⃣ Calificación de 1 a 5 estrellas
+calificacion = st.slider("¿Qué tan útil fue la respuesta del chatbot?", 1, 5, 3)
+st.write("⭐" * calificacion)
+
+# 2️⃣ Comentario adicional
+comentario = st.text_area("¿Tienes algún comentario o sugerencia?", placeholder="Escribe tu opinión aquí...")
+
+# 3️⃣ Botón para 'enviar' (simulado)
+if st.button("📩 Enviar evaluación"):
+    st.success("¡Gracias por tu evaluación! 😊")
+    if comentario:
+        st.info("Tus comentarios nos ayudan a mejorar. ¡Gracias por compartirlos!")
+
+# 4️⃣ Cierre amable
+st.markdown("---")
+st.markdown("Hecho con ❤️ por Zuleika Napurí •")
