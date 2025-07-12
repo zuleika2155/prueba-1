@@ -281,7 +281,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
 
         st.success("Haz clic en cada botón para conocer más sobre el amor y las relaciones 💬")
 
-            elif opcion == "7. ¿Estoy en una relación tóxica?":
+    elif opcion == "7. ¿Estoy en una relación tóxica?":
             st.header("🔍 ¿Estoy en una relación tóxica?")
 
         preguntas = [
