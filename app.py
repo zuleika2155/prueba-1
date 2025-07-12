@@ -277,6 +277,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
         for tarjeta in tarjetas:
             if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
                 if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
+                    st.markdown("Lee con atención las siguientes preguntas y reflexiona sobre tu situación:")
                     preguntas = [
     "1. ¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
     "2. ¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
@@ -287,11 +288,11 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
     "7. ¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
 ]
 
-
+# ✅ Mostrar preguntas
 for pregunta in preguntas:
     st.markdown(f"- {pregunta}")
 
-# Inicializar el estado si no existe
+# Inicializa el estado si no está definido
 if "mostrar_mensaje" not in st.session_state:
     st.session_state.mostrar_mensaje = False
 
@@ -299,7 +300,7 @@ if "mostrar_mensaje" not in st.session_state:
 if st.button("Mostrar mensaje de reflexión"):
     st.session_state.mostrar_mensaje = True
 
-# Mostrar el mensaje si el botón fue presionado
+# Mostrar el mensaje de reflexión
 if st.session_state.mostrar_mensaje:
     st.subheader("💡 Reflexión")
     st.markdown("""
