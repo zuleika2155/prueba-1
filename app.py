@@ -113,8 +113,11 @@ Eficacia: 99,7 % si se usa correctamente. También protege contra el cáncer de 
 
             },
             "💉 Inyecciones": {
-                "img": "https://cdn.pixabay.com/photo/2020/05/19/19/39/syringe-5193891_1280.jpg",
-                "desc": "**Inyecciones**\n- Mensuales o trimestrales.\n- Eficacia entre 99.5% y 99.7%."
+                "img": "https://images.unsplash.com/photo-1609009630912-f16dcf3e03a6?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "desc": """**Inyecciones**
+Actúan como deteniendo la ovulación y espesan el moco cervical, además que bloquean el paso de los espermatozoides hacia el útero. Puede hacerlo durante ciertos meses, por ejemplo inyectable mensual, te protege todo un mes, además del trimestre que es por tres meses.
+Tiene una eficacia de manera mensual de 99.5% y trimestral de 99.7%"""
+
             },
             "📍 Implante subdérmico": {
                 "img": "https://www.nexplanonusa.com/assets/images/nx_diagram_2.png",
