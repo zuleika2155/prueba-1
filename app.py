@@ -1,10 +1,10 @@
-# ESInformación: Aplicación Streamlit interactiva
 import streamlit as st
+#Streamlit para hacerlo de manera rapida y ordenada
 
-# Configuración general
+# Configuración de la apariencia general de la página, pues tenemos el titulo, el icono y el contenido que corresponde a cada que se pondrá
 st.set_page_config(page_title="ESInformación 🧠💬", page_icon="🌈", layout="centered")
 
-# Estilos personalizados y fondo cálido
+# Estilos personalizados y fondo cálido, nos yuada a personalizar la pagina, cambiando el color de fondo, el tamañao y el color de los titulos, ademas de personalizar la apariencia de los botones
 st.markdown("""
     <style>
     body {
@@ -39,17 +39,19 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+#permite usar código HTML dentro de streamlit para mejorar el diseño de la app
 
-# Título principal
+# al igual que lo anterior, es un titulo personalizado de lo que se pondrá y será la página
 st.markdown('<div class="titulo">🌈 ¡Bienvenidx a <i>ESInformación</i>! 🧠💬</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitulo">Un espacio seguro para aprender sobre Educación Sexual Integral (ESI)</div>', unsafe_allow_html=True)
 
-# Presentación
+# Presentación de lo que será, como una bienvenida. Agregamos imagenes para que se vea mas colorido, ademas que se pueda ajustar al ancho del contenido
 st.image(
     "https://plus.unsplash.com/premium_vector-1682306944260-73daeebad9d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     caption="La ESI promueve respeto, diversidad y autocuidado",
     use_column_width=True
 )
+#muestra un texto explicativo sobre qué es la Educación Sexual Integral (ESI), resaltando su enfoque en el respeto, la diversidad y el autocuidado.
 st.write("""
 La Educación Sexual Integral busca brindar a los estudiantes información confiable sobre su cuerpo, la sexualidad y la afectividad, para que puedan tomar decisiones libres y responsables.
 
@@ -59,18 +61,19 @@ Además, enseña a valorar la diversidad, cuestionar estereotipos de género y f
 """)
 
 # Inputs
-nombre = st.text_input("¿Cómo te llamas?")
+nombre = st.text_input("¿Cómo te llamas?") #permite al usuario ingresar su nombre y edad.
 edad = st.number_input("¿Cuántos años tienes?", min_value=0, step=1)
-
+#dependiendo de la edad, ofrece un mensaje personalizado, siendo mayor o menor de edad.
 if nombre and edad:
     if edad < 18:
         st.info(f"¡Perfecto, {nombre}! Como eres menor de edad, usaremos un lenguaje claro y respetuoso 😊.")
     else:
         st.success(f"Gracias por confiar en nosotros, {nombre}. Esta herramienta es útil para todxs 🧡.")
-
+#Emitir el uso de algunas etiquetas como tamaño y color
 st.markdown("<div class='subtitulo'>¿Qué te gustaría conocer en <i>ESInformación</i>?</div>", unsafe_allow_html=True)
 
 with st.container():
+    #Una barra de menu de temas que se han seleccionado sobre la ESI.
     with st.expander("Haz clic para explorar los temas disponibles. Diviérte con el apartado que hemos ido creando para ti ✨", expanded=True):
         opcion = st.selectbox("", [
             "Selecciona una opción",
@@ -84,6 +87,8 @@ with st.container():
 
     if opcion == "1. ¿Qué es la ESI?":
         st.header("📌 ¿Qué es la ESI?")
+#muestra un título con emoji para introducir el tema.
+#Despliega un texto explicativo sobre la Educación Sexual Integral.
         st.markdown("""
 La Educación Sexual Integral (ESI) es un enfoque educativo que busca brindar conocimientos científicos, éticos y afectivos sobre la sexualidad. Está diseñada para que niñas, niños y adolescentes desarrollen habilidades para tomar decisiones informadas, responsables y respetuosas sobre su cuerpo y relaciones.
 
@@ -97,10 +102,12 @@ La ESI no reemplaza lo que se enseña en casa, sino que lo complementa, involucr
         """)
 
     # === SECCIÓN 2 ===
+#Esta línea verifica si el usuario seleccionó el tema "Métodos anticonceptivos" en el menú desplegable. Si es así, ejecuta el contenido siguiente.
     elif opcion == "2. Métodos anticonceptivos":
         st.header("📌 Métodos Anticonceptivos")
         st.markdown("Haz clic para conocer más sobre cada método:")
-
+#Esto introduce al usuario al contenido que viene a continuación.
+#Metodos puesto como un diccionario, donde cada uno es un método puesto acompañado con un emji, se le agrega imagenes y una descripcion correspondiente, ademas de la información
         metodos = {
             "🧴 Condón": {
                 "img": "https://images.unsplash.com/photo-1575997803451-f0752869e498?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -161,9 +168,14 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                 st.image(info["img"], use_column_width=True)
                 st.markdown(info["desc"])
 
+    
     # === SECCIÓN 3 ===
+#Este bloque se activa si el usuario elige la opción 3 del menú desplegable.
+#Busque poner una dinamica de juego para conocer sobre los mitos y verdades.   
     if opcion == "3. Mitos y verdades":
         st.header("🎮 ¿Mito o Verdad?")
+#Coloca un título destacado con un emoji de juego para invitar al usuario a participar de forma lúdica
+#Se crea una lista de preguntas con el siguiente formato para cada ítem:
         preguntas = [
             ("La educación sexual en la escuela interfiere con lo que enseñan en casa.", "mito", "La educación sexual integral no interfiere con la educación previa que nuestros padres y madres nos ofrecen, sino que por el contrario, la labor de padres y profesores se complementa para asegurar una formación integral." ),
             ("Hablar de sexualidad hace que los adolescentes tengan más relaciones sexuales a temprana edad.", "mito", "Está demostrado que la ESI retrasa el inicio sexual y mejora la toma de decisiones, además ayuda a crecer en conocimiento y valores para vivir la sexualidad con bienestar."),
@@ -171,6 +183,7 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
             ("La ESI habla sobre identidad de género u orientación sexual en la escuela, sin determinar la sexualidad de las personas.", "verdad", "Verdad, pues enseña a no discriminar y a valorar la diversidad que hay a nuestro alrededor."),
         ]
         aciertos = 0
+#Aqui se iran sumando los punto, usaremos if y else para ir marcado la cantidad de respuestas
         for i, (preg, correcta, exp) in enumerate(preguntas):
             st.markdown(f"**{i+1}. {preg}**")
             rpta = st.radio("¿Qué opinas?", ["", "mito", "verdad"], key=f"rpta_{i}")
@@ -182,7 +195,7 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                     st.error("❌ Incorrecto")
                 st.info(exp)
                 st.markdown("---")
-                
+#Usamos if, pues dependiendo de la cantidad de respuestas que han acertado.                
         if aciertos == 4:
             st.balloons()
             st.markdown(f"<h2 style='text-align: center; color: green;'>🎉 ¡Excelente, {nombre}! Respondiste todas correctamente. ¡Sigue así! 🎉</h2>", unsafe_allow_html=True)
@@ -193,10 +206,12 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
         else:
             st.markdown(f"<h3 style='text-align: center;'>💪 No te desanimes, {nombre}. ¡Sigue aprendiendo y mejorando!</h3>", unsafe_allow_html=True)
 
-
+# ===== OPCION 4 =======
     elif opcion == "4. Autocuidado digital y sexting":
+#Este bloque se ejecuta cuando el usuario elige esta opción en el menú.
         st.header("📱 Autocuidado Digital y Sexting")
-
+#Coloca un título principal que introduce el tema.
+#Se crea una lista de tarjetas de información. Cada tarjeta es un diccionario con titulo y contenido.
         cards = [
             {
                 "titulo": "🔐 ¿Qué es el sexting?",
@@ -225,17 +240,23 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
                 """
             },
         ]
-
+#Cuando el usuario presione un boton, se muestre el contenido de la tarjeta.
         for card in cards:
             if st.button(card["titulo"]):
                 st.markdown(f"<div class='card'><h4>{card['titulo']}</h4><p>{card['contenido']}</p></div>", unsafe_allow_html=True)
+                #Nos ayuda a saber que se presentará en cada uno.
 
         st.success("Haz clic en cada botón para explorar la información de forma interactiva ✨")
+#Mensaje amigable y claro que guía al usuario a interactuar con los botones
 
-#sección 5
+
+# ======= OPCION 5 ========
+
+
+#Cuando el usuario ponga la opcion 5, esta se desplegará.
     elif opcion == "5. Relaciones afectivas y vínculos sanos":
         st.header("💞 Relaciones afectivas y vínculos sanos")
-        
+#Al igual que las anteriores, queremos tarjetas para que la información se vea ordenada. esto se pone como diccionario con el icono, titulo y contenido
         tarjetas = [
             {
                 "icono": "❤️‍🔥",
@@ -281,6 +302,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
 
         for tarjeta in tarjetas:
             if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
+#cada tarjeta se convierte en un boton con el button y luego se muestra el contenido directo
                 if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
                     st.markdown("Lee con atención las siguientes preguntas y reflexiona sobre tu situación:")
     
@@ -295,7 +317,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                     ]
                     for pregunta in preguntas:
                         st.markdown(f"- {pregunta}")
-    
+#Muestra un subtítulo con el texto “💡 Reflexión”, usando un tamaño de letra más pequeño que un encabezado    
                     st.subheader("💡 Reflexión")
                     st.markdown("""
     Si al leer estas preguntas sentiste incomodidad o te identificaste con varias situaciones, es importante que prestes atención a tu relación.
@@ -314,12 +336,17 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                   
 
 
-#OPCION 6
+# ==== OPCION 6  =====
+#Activa esta sección cuando el usuario elige la opción 6 del menú.
+
     elif opcion == "6. Identidad de género y orientación sexual":
+#Muestra un título llamativo con ícono y texto grande.
+
         st.header("🌈 Identidad de género y orientación sexual")
+#Agrega un bloque desplegable (abierto por defecto) que invita a explorar los conceptos clave de forma amigable.
         with st.expander("Explora los conceptos clave", expanded=True):
             st.write("Conoce los conceptos fundamentales para comprender la diversidad sexual y de género de manera respetuosa.")
-
+#agregamos columnas para que sea mas ordenado a la vista del usuario.
         col1, col2 = st.columns(2)
         with col1:
             st.subheader("🧬 Sexo")
@@ -342,7 +369,7 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                 "Es una construcción legal, social y cultural que establece normas, expectativas y roles sobre cómo deben comportarse las personas "
                 "según su sexo asignado. "
             )
-
+#Agrega una línea divisoria visual entre bloques temáticos.
         st.divider()
 
         col3, col4 = st.columns(2)
@@ -370,28 +397,32 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
                 "Se distingue fácilmente de otros componentes de la sexualidad que incluyen sexo biológico, identidad sexual (el sentido psicológico de ser hombre o mujer) y el rol social del sexo (respeto de las normas culturales de conducta femenina y masculina). "
                 "Entre las más comunes: homosexualidad, bisexualidad, asexualidad. "
             )
-
+#Muestra una caja de mensaje positivo y afirmador que valida todas las formas de identidad y orientación, cerrando con un mensaje de inclusión y respeto.
         st.success("✨ Todas las formas de identidad y orientación son válidas. ¡Vive con autenticidad y respeto!")
 
 
 
-
+#====== PUNTUACIÓN =========
 st.markdown("---")
 st.header("📊 Evalúa tu experiencia")
+#Título que invita al usuario a dar su opinión de forma clara y amigable.
 
-# 1️⃣ Calificación de 1 a 5 estrellas
+# 1️ Calificación de 1 a 5 estrellas
 calificacion = st.slider("¿Qué tan útil fue la respuesta del chatbot?", 1, 5, 3)
 st.write("⭐" * calificacion)
+#Se usa un slider interactivo para que el usuario califique de 1 a 5. Luego se muestra un número equivalente de estrellas como visualización simpática de su nota.
 
-# 2️⃣ Comentario adicional
+# 2️ Comentario adicional
 comentario = st.text_area("¿Tienes algún comentario o sugerencia?", placeholder="Escribe tu opinión aquí...")
+#Área de texto donde el usuario puede dejar sugerencias, felicitaciones o críticas constructivas.
 
-# 3️⃣ Botón para 'enviar' (simulado)
+# 3️ Botón para 'enviar' (simulado)
 if st.button("📩 Enviar evaluación"):
     st.success("¡Gracias por tu evaluación! 😊")
     if comentario:
         st.info("Tus comentarios nos ayudan a mejorar. ¡Gracias por compartirlos!")
-
-# 4️⃣ Cierre amable
+#Al hacer clic, aparece un mensaje de agradecimiento. Si dejó un comentario, también se muestra un mensaje que lo valora.
+# 4️ Cierre amable
 st.markdown("---")
 st.markdown("Hecho con ❤️ por Zuleika Napurí •")
+#Firma amistosa de la autora del proyecto, reforzando el vínculo humano y el compromiso con el bienestar.
