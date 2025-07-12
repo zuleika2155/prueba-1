@@ -278,8 +278,6 @@ Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que 
             if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
                 if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
                     preguntas = [
-                        
-preguntas = [
     "¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
     "¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
     "¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
