@@ -229,30 +229,30 @@ Tiene hasta un 95% de efectividad, tiene mayor efectividad cuanto antes se use. 
 
 #sección 5
     elif opcion == "5. Relaciones afectivas y vínculos sanos":
-        st.header("💞 Relaciones afectivas y vínculos sanos")
+    st.header("💞 Relaciones afectivas y vínculos sanos")
 
-        tarjetas = [
-            {
-                "icono": "❤️‍🔥",
-                "titulo": "¿Qué es el deseo sexual?",
-                "contenido": "El deseo sexual, también conocido como libido o lujuria, es la primera etapa del amor en pareja. Se caracteriza por una fuerte atracción física y el interés en mantener relaciones sexuales. Esta fase está impulsada por las hormonas sexuales: la testosterona y los estrógenos. Este tipo de amor se manifiesta cuando la relación gira principalmente en torno al deseo sexual, ya sea a través de la actividad física, fantasías sexuales o la tensión que se siente al estar cerca de la otra persona."
-            },
-            {
-                "icono": "💖",
-                "titulo": "¿Qué es la atracción romántica?",
-                "contenido": "La segunda fase del amor de pareja es la atracción romántica o el enamoramiento, y está dominada por tres sustancias clave: la dopamina, la norepinefrina y la serotonina. La dopamina, producida por el hipotálamo en el cerebro, se libera cuando realizamos actividades placenteras. Durante el enamoramiento, los niveles de dopamina se elevan significativamente, junto con la norepinefrina.  Estas dos hormonas generan sensaciones de euforia, entusiasmo, energía, y pueden causar una disminución del apetito y del sueño."
-            },
-            {
-                "icono": "❤️",
-                "titulo": "¿Qué es el amor?",
-                "contenido": " Si nos preguntas qué es el amor, nosotros lo describimos como un sentimiento profundo y complejo que se experimenta hacia otra persona, uno mismo o algo que nos apasiona. Además, te diríamos que el amor implica una conexión emocional, física y espiritual que nos hace sentir felices, plenos y realizados."
-             },
-            {
-                "icono": "🚩",
-                "titulo": "Identificar las relaciones tóxicas",
-                "contenido": """
+    tarjetas = [
+        {
+            "icono": "❤️‍🔥",
+            "titulo": "¿Qué es el deseo sexual?",
+            "contenido": "El deseo sexual, también conocido como libido o lujuria, es la primera etapa del amor en pareja. Se caracteriza por una fuerte atracción física y el interés en mantener relaciones sexuales. Esta fase está impulsada por las hormonas sexuales: la testosterona y los estrógenos. Este tipo de amor se manifiesta cuando la relación gira principalmente en torno al deseo sexual, ya sea a través de la actividad física, fantasías sexuales o la tensión que se siente al estar cerca de la otra persona."
+        },
+        {
+            "icono": "💖",
+            "titulo": "¿Qué es la atracción romántica?",
+            "contenido": "La segunda fase del amor de pareja es la atracción romántica o el enamoramiento, y está dominada por tres sustancias clave: la dopamina, la norepinefrina y la serotonina. La dopamina, producida por el hipotálamo en el cerebro, se libera cuando realizamos actividades placenteras. Durante el enamoramiento, los niveles de dopamina se elevan significativamente, junto con la norepinefrina. Estas dos hormonas generan sensaciones de euforia, entusiasmo, energía, y pueden causar una disminución del apetito y del sueño."
+        },
+        {
+            "icono": "❤️",
+            "titulo": "¿Qué es el amor?",
+            "contenido": "Si nos preguntas qué es el amor, nosotros lo describimos como un sentimiento profundo y complejo que se experimenta hacia otra persona, uno mismo o algo que nos apasiona. Además, te diríamos que el amor implica una conexión emocional, física y espiritual que nos hace sentir felices, plenos y realizados."
+        },
+        {
+            "icono": "🚩",
+            "titulo": "Identificar las relaciones tóxicas",
+            "contenido": """
 Control y desconfianza y celos:
-Si tu pareja necesita saber dónde estás todo el tiempo, se molesta cuando no respondes al instante o te exige atención constante, es posible que el \"cuidado\" o el \"interés\" esconda un deseo de control.
+Si tu pareja necesita saber dónde estás todo el tiempo, se molesta cuando no respondes al instante o te exige atención constante, es posible que el "cuidado" o el "interés" esconda un deseo de control.
 
 Manipulación emocional:
 Frases como “si me amaras, lo harías” son formas de chantaje emocional. Cuando se usan los sentimientos para presionar o manejar al otro, hay manipulación.
@@ -266,52 +266,51 @@ Cambiar tu comportamiento, vestimenta o incluso tener relaciones sexuales sin ga
 Minimizar tus emociones:
 Comentarios como “eso no es nada” o “te quejas por gusto” niegan lo que sientes. En una relación sana, se validan las emociones, no se ridiculizan.
 """
-            },
-            {
-                "icono": "❓",
-                "titulo": "¿Estoy en una relación tóxica?",
-                "contenido": "Haz clic aquí para responder algunas preguntas y descubrirlo."
-            }
-        ]
+        },
+        {
+            "icono": "❓",
+            "titulo": "¿Estoy en una relación tóxica?",
+            "contenido": "Haz clic aquí para responder algunas preguntas y descubrirlo."
+        }
+    ]
 
-        for tarjeta in tarjetas:
-            if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
-                if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
-                    st.markdown("Lee con atención las siguientes preguntas y reflexiona sobre tu situación:")
-                    preguntas = [
-    "1. ¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
-    "2. ¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
-    "3. ¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
-    "4. ¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
-    "5. ¿Sientes que recurre al chantaje emocional para salirse con la suya?",
-    "6. ¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
-    "7. ¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
-]
+    for tarjeta in tarjetas:
+        if st.button(f"{tarjeta['icono']} {tarjeta['titulo']}"):
+            if tarjeta['titulo'] == "¿Estoy en una relación tóxica?":
+                st.markdown("Lee con atención las siguientes preguntas y reflexiona sobre tu situación:")
 
-# ✅ Mostrar preguntas
-for pregunta in preguntas:
-    st.markdown(f"- {pregunta}")
+                preguntas = [
+                    "1. ¿Tu pareja apoya tus metas y proyectos, o los minimiza o ridiculiza?",
+                    "2. ¿Sientes que haga lo que hagas, nunca es suficiente? ¿Recibes críticas constantes?",
+                    "3. ¿Te has ido alejando de tus amigos y familia desde que estás en esta relación?",
+                    "4. ¿Tu pareja se burla de tus gustos o aficiones, o los respeta?",
+                    "5. ¿Sientes que recurre al chantaje emocional para salirse con la suya?",
+                    "6. ¿Te exige explicaciones sobre dónde estuviste, con quién y qué hiciste?",
+                    "7. ¿Toma decisiones importantes sin consultarte, aunque te afecten directamente?"
+                ]
 
-# Inicializa el estado si no está definido
-if "mostrar_mensaje" not in st.session_state:
-    st.session_state.mostrar_mensaje = False
+                for pregunta in preguntas:
+                    st.markdown(f"- {pregunta}")
 
-# Botón para mostrar el mensaje
-if st.button("Mostrar mensaje de reflexión"):
-    st.session_state.mostrar_mensaje = True
+                if "mostrar_mensaje" not in st.session_state:
+                    st.session_state.mostrar_mensaje = False
 
-# Mostrar el mensaje de reflexión
-if st.session_state.mostrar_mensaje:
-    st.subheader("💡 Reflexión")
-    st.markdown("""
-    Si al leer estas preguntas sentiste incomodidad o te identificaste con varias situaciones, es importante que prestes atención a tu relación.
+                if st.button("Mostrar mensaje de reflexión"):
+                    st.session_state.mostrar_mensaje = True
 
-    En una relación saludable:
-    - Se respeta tu individualidad.
-    - Tus emociones son validadas, no ridiculizadas.
-    - No se recurre al control ni al chantaje.
-    - Puedes crecer, desarrollarte y sentirte segura/o.
+                if st.session_state.mostrar_mensaje:
+                    st.subheader("💡 Reflexión")
+                    st.markdown("""
+Si al leer estas preguntas sentiste incomodidad o te identificaste con varias situaciones, es importante que prestes atención a tu relación.
 
-    Si algo no te hace bien, no estás exagerando. Tu bienestar emocional es lo más importante. 
-    Habla con alguien de confianza o con un/a profesional. Mereces una relación basada en el respeto y el amor propio.
-    """)
+En una relación saludable:
+- Se respeta tu individualidad.
+- Tus emociones son validadas, no ridiculizadas.
+- No se recurre al control ni al chantaje.
+- Puedes crecer, desarrollarte y sentirte segura/o.
+
+Si algo no te hace bien, no estás exagerando. Tu bienestar emocional es lo más importante. 
+Habla con alguien de confianza o con un/a profesional. Mereces una relación basada en el respeto y el amor propio.
+""")
+            else:
+                st.markdown(f"**{tarjeta['icono']} {tarjeta['titulo']}**\n\n{tarjeta['contenido']}")
